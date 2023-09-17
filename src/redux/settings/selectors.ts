@@ -1,0 +1,1 @@
+import { RootStateType } from '../rootStateType';
