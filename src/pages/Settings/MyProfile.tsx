@@ -26,7 +26,7 @@ function MyProfile() {
         </div>
       </div>
       <div className="grid  gap-4 mt-6 p-6">
-        <div className="rounded-[24px] flex flex-row items-center justify-between self-stretch shrink-0 relative">
+        <div className="rounded-[24px] flex flex-wrap items-center justify-between self-stretch shrink-0 relative">
           <img
             className="rounded-[88.5px] shrink-0 w-[110px] h-[110px] relative"
             src={
@@ -56,7 +56,7 @@ function MyProfile() {
               Personal Information{' '}
             </div>
             <div
-              className="rounded-[10px] border-solid border-[#aecaf4] border pt-3 pr-4 pb-3 pl-4 flex flex-row gap-2.5 items-center justify-center shrink-0 h-11 relative"
+              className="rounded-[10px] border-solid border-[#aecaf4] border pt-3 pr-4 pb-3 pl-4 flex flex-row gap-2.5 items-center justify-center shrink-0 h-11 relative cursor-pointer"
               onClick={() => {
                 setIsEdit(!isEdit);
               }}
@@ -114,7 +114,7 @@ function MyProfile() {
               )}
             </div>
           </div>
-          <div className="pr-4 pl-4 flex flex-row gap-[124px] items-start justify-start shrink-0 relative">
+          <div className="pr-4 pl-4 flex flex-row sm:flex-col md:flex-col lg-flex-row xl:flex-row gap-[124px] sm:gap-8 md:gap-8 lg:gap-[124px] xl:gap-[124px] items-start justify-start shrink-0 relative">
             <div className="flex flex-col gap-8 items-start justify-start shrink-0 relative">
               <div className="flex flex-col gap-1 items-start justify-start shrink-0  relative">
                 <div
@@ -136,7 +136,7 @@ function MyProfile() {
                   value={'Peter'}
                 />
               </div>
-              <div className="flex flex-col gap-1 items-start justify-start shrink-0 w-60 relative">
+              <div className="flex flex-col gap-1 items-start justify-start shrink-0  relative">
                 <div
                   className="text-[#858e93] text-left relative"
                   style={{
@@ -154,7 +154,7 @@ function MyProfile() {
                   peterhomburg11@gmail.com{' '}
                 </div>
               </div>
-              <div className="flex flex-col gap-1 items-start justify-start shrink-0 w-[100px] relative">
+              <div className="flex flex-col gap-1 items-start justify-start shrink-0 relative">
                 <div
                   className="text-[#858e93] text-left relative"
                   style={{

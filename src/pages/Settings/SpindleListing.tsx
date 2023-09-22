@@ -51,7 +51,10 @@ function SpindleListing() {
         >
           Spindle Listing{' '}
         </div>
-        <div className="rounded-[10px] border-solid border-[#aecaf4] border pt-3 pr-4 pb-3 pl-4 flex flex-row gap-2.5 items-center justify-center shrink-0 h-11 relative">
+        <div
+          className="rounded-[10px] border-solid border-[#aecaf4] border pt-3 pr-4 pb-3 pl-4 flex flex-row gap-2.5 items-center justify-center shrink-0 h-11 relative cursor-pointer"
+          onClick={() => setAddSpindle(true)}
+        >
           <svg
             className="rounded-[22px] p-[5px] flex flex-row gap-[5px] items-center justify-center shrink-0 relative overflow-visible"
             style={{}}
@@ -77,7 +80,6 @@ function SpindleListing() {
             style={{
               font: "var(--buttons-medium, 600 15px/20px 'Mulish', sans-serif)",
             }}
-            onClick={() => setAddSpindle(true)}
           >
             Add new Spindle{' '}
           </button>
@@ -446,7 +448,7 @@ function SpindleListing() {
               </div>
               <div className="p-4 flex flex-col gap-10 items-start justify-start self-stretch shrink-0 relative">
                 <div className="flex flex-col gap-8 items-start justify-start shrink-0 relative">
-                  <div className="flex flex-row gap-[124px] items-start justify-start shrink-0 relative">
+                  <div className="flex flex-row sm:flex-col md:flex-col lg:flex-row xl:flex-row gap-[124px] sm:gap-8 md:gap-8 lg:gap-[90px] xl:gap-[90px] items-start justify-start shrink-0 relative">
                     <div className="flex flex-col gap-1 items-start justify-start shrink-0 w-56 relative">
                       <div
                         className="text-[#858e93] text-left relative"

@@ -62,9 +62,9 @@ function Dashboard() {
   return (
     <PageLayout pageTitle="dashboard">
       <div className="flex-1 w-full">
-        <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-3  ">
+        <div className="grid gap-14 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-3  ">
           <StatusCard />
-          <div className="flex flex-col gap-[38px] items-center justify-center shrink-0 min-w-[734px] sm:min-w-min relative col-span-2">
+          <div className="flex flex-col gap-[38px] items-center justify-center shrink-0 w-[100%] sm:min-w-min relative col-span-2">
             <div className="flex flex-row items-start justify-between self-stretch shrink-0  relative">
               <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row xl:flex-row gap-0 items-start justify-start shrink-0 relative">
                 <div
@@ -488,7 +488,7 @@ function Dashboard() {
               </div>
             </div>
             <div
-              className="bg-[#ffffff] rounded-[10px] shrink-0 w-[703px] sm:w-[500px] lg:w-[703px] xl:w-[703px] relative no-scrollbar"
+              className="bg-[#ffffff] rounded-[10px] shrink-0 w-[100%] relative no-scrollbar"
               style={{
                 boxShadow: 'inset -1px 1px 9px 0px rgba(0, 0, 0, 0.12)',
                 overflowX: 'auto',
@@ -580,7 +580,7 @@ function Dashboard() {
                 </div>
               </div>
               <div
-                className="bg-[#ffffff] rounded-[15px] pr-4 pl-4 mb-4 flex flex-col gap-2.5 items-center justify-end shrink-0 w-[317px] h-[170px] relative"
+                className="bg-[#ffffff] rounded-[15px] pr-4 pl-4 mb-4 flex flex-col gap-2.5 items-center justify-end shrink-0 w-[80%] h-[170px] relative"
                 style={{ overflowY: 'auto' }}
               >
                 <div className="rounded-[5px] pt-1 pb-1 flex flex-row items-center justify-between self-stretch shrink-0 relative">

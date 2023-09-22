@@ -2,7 +2,7 @@ import React from 'react';
 
 function StatusCard() {
   return (
-    <div className="bg-[#e6effc] rounded-[25px] shrink-0 min-w-[330px] min-h-[255px] relative overflow-hidden">
+    <div className="bg-[#e6effc] rounded-[25px] shrink-0 min-w-[320px] min-h-[255px] relative overflow-hidden">
       <div
         className="text-[#292c2e] text-left absolute left-6 top-6"
         style={{ font: "700 16px/26px 'Mulish', sans-serif" }}
