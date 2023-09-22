@@ -147,7 +147,7 @@ function Introspect() {
                   </div>
                 </div>
                 <div className="flex justify-between w-full flex-1 mt-8 gap-x-4">
-                  <div className="p-4 xl:min-w-[230px] border flex-wrap justify-center lg:flex-nowrap rounded-3xl flex items-center gap-x-6">
+                  <div className="p-4 xl:min-w-[210px] border flex-wrap justify-center lg:flex-nowrap rounded-3xl flex items-center gap-x-6">
                     <div className="text-sm text-gray-600">
                       <img src={batteryLevelIcon} alt="battery level" />
                     </div>
@@ -156,7 +156,7 @@ function Introspect() {
                       <div className="text-xs text-gray-600 mt-1">Battery Level</div>
                     </div>
                   </div>
-                  <div className="p-4 xl:min-w-[230px] border flex-wrap justify-center lg:flex-nowrap rounded-3xl flex items-center gap-x-6">
+                  <div className="p-4 xl:min-w-[210px] border flex-wrap justify-center lg:flex-nowrap rounded-3xl flex items-center gap-x-6">
                     <div className="text-sm text-gray-600">
                       <img src={dataCountIcon} alt="battery level" />
                     </div>
@@ -165,7 +165,7 @@ function Introspect() {
                       <div className="text-xs text-gray-600 mt-1">Data Count</div>
                     </div>
                   </div>
-                  <div className="p-4 xl:min-w-[230px] border flex-wrap justify-center lg:flex-nowrap rounded-3xl flex items-center gap-x-6">
+                  <div className="p-4 xl:min-w-[210px] border flex-wrap justify-center lg:flex-nowrap rounded-3xl flex items-center gap-x-6">
                     <div className="text-sm text-gray-600">
                       <img src={sensingDurationIcon} alt="battery level" />
                     </div>
