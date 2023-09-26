@@ -76,10 +76,10 @@ function Dashboard() {
                   onClick={() => setIsSelectedTab(0)}
                 >
                   <div
-                    className="text-[#292c2e] text-left relative flex items-center justify-start"
-                    style={{
-                      font: "var(--headline-4-bold, 700 14px/22px 'Mulish', sans-serif)",
-                    }}
+                    className="text-[#292c2e] text-left relative flex items-center justify-start font-[700] text-[14px] leading-[22px] hd:text-[20px]"
+                    // style={{
+                    //   font: "var(--headline-4-bold, 700 14px/22px 'Mulish', sans-serif)",
+                    // }}
                   >
                     Last Month{' '}
                   </div>
@@ -93,10 +93,10 @@ function Dashboard() {
                   onClick={() => setIsSelectedTab(1)}
                 >
                   <div
-                    className="text-[#292c2e] text-left relative flex items-center justify-start"
-                    style={{
-                      font: "var(--headline-4-bold, 700 14px/22px 'Mulish', sans-serif)",
-                    }}
+                    className="text-[#292c2e] text-left relative flex items-center justify-start font-[700] text-[14px] leading-[22px] hd:text-[20px]"
+                    // style={{
+                    //   font: "var(--headline-4-bold, 700 14px/22px 'Mulish', sans-serif)",
+                    // }}
                   >
                     Last 7 Days{' '}
                   </div>
@@ -110,10 +110,10 @@ function Dashboard() {
                   onClick={() => setIsSelectedTab(2)}
                 >
                   <div
-                    className="text-[#292c2e] text-left relative flex items-center justify-start"
-                    style={{
-                      font: "var(--headline-4-bold, 700 14px/22px 'Mulish', sans-serif)",
-                    }}
+                    className="text-[#292c2e] text-left relative flex items-center justify-start font-[700] text-[14px] leading-[22px] hd:text-[20px]"
+                    // style={{
+                    //   font: "var(--headline-4-bold, 700 14px/22px 'Mulish', sans-serif)",
+                    // }}
                   >
                     Previous Session{' '}
                   </div>
@@ -126,10 +126,10 @@ function Dashboard() {
                   }`}
                 >
                   <div
-                    className="text-[#292c2e] text-left relative flex items-center justify-start"
-                    style={{
-                      font: "var(--headline-4-bold, 700 14px/22px 'Mulish', sans-serif)",
-                    }}
+                    className="text-[#292c2e] text-left relative flex items-center justify-start font-[700] text-[14px] leading-[22px] hd:text-[20px]"
+                    // style={{
+                    //   font: "var(--headline-4-bold, 700 14px/22px 'Mulish', sans-serif)",
+                    // }}
                     onClick={() => setIsSelectedTab(3)}
                   >
                     Current Session{' '}
@@ -148,14 +148,12 @@ function Dashboard() {
                 />
               </div>
             </div>
-            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-10 items-center justify-start shrink-0 relative">
-              <div className="rounded-[10px] border-solid border-[#d0e1fb] border-[0.5px] p-4 flex flex-col gap-4 items-center justify-center shrink-0 w-[200px] relative overflow-hidden">
+            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-10 items-center justify-start shrink-0 self-stretch relative">
+              <div className="rounded-[10px] border-solid border-[#d0e1fb] border-[0.5px] p-4 flex flex-col gap-4 items-center justify-center shrink-0  relative overflow-hidden hd:h-[280px]">
                 <div className="flex flex-col gap-4 items-center justify-center shrink-0 relative">
                   <svg
-                    className="rounded-[27px] pt-1 pr-3 pb-1 pl-3 flex flex-row gap-5 items-center justify-center shrink-0 relative overflow-visible"
+                    className="rounded-[27px] pt-1 pr-3 pb-1 pl-3 flex flex-row gap-5 items-center justify-center shrink-0 relative overflow-visible w-[60px] h-[60px] hd:w-[75px] hd:h-[75px]"
                     style={{ transform: 'translate(0px, 0px)' }}
-                    width="44"
-                    height="44"
                     viewBox="0 0 44 44"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -171,16 +169,16 @@ function Dashboard() {
 
                   <div className="pr-2 pl-2 flex flex-col gap-[3px] items-center justify-center shrink-0 relative">
                     <div
-                      className="text-[#545a5f] text-left relative flex items-center justify-start"
-                      style={{ font: "700 20px 'Mulish', sans-serif" }}
+                      className="text-[#545a5f] text-left relative flex items-center justify-start font-[700] text-[20px] hd:text-[30px]"
+                      // style={{ font: "700 20px 'Mulish', sans-serif" }}
                     >
                       550 °C{' '}
                     </div>
                     <div
-                      className="text-[#545a5f] text-left relative flex items-center justify-start"
-                      style={{
-                        font: "var(--small-text-1, 500 12px/20px 'Mulish', sans-serif)",
-                      }}
+                      className="text-[#545a5f] text-left relative flex items-center justify-start font-[500] text-[12px] hd:text-[20px]"
+                      // style={{
+                      //   font: "var(--small-text-1, 500 12px/20px 'Mulish', sans-serif)",
+                      // }}
                     >
                       Avg Temperature{' '}
                     </div>
@@ -195,27 +193,25 @@ function Dashboard() {
                 ></div>
                 <div className="pr-2 pl-2 flex flex-row items-center justify-between self-stretch shrink-0 relative">
                   <div
-                    className="text-[#545a5f] text-left relative flex items-center justify-start"
-                    style={{ font: "500 12px 'Mulish', sans-serif" }}
+                    className="text-[#545a5f] text-left relative flex items-center justify-start font-[500] text-[12px] hd:text-[20px]"
+                    // style={{ font: "500 12px 'Mulish', sans-serif" }}
                   >
                     Max{' '}
                   </div>
                   <div
-                    className="text-[#292c2e] text-left relative flex items-center justify-start"
-                    style={{ font: "700 12px 'Mulish', sans-serif" }}
+                    className="text-[#292c2e] text-left relative flex items-center justify-start font-[700] text-[12px] hd:text-[20px]"
+                    // style={{ font: "700 12px 'Mulish', sans-serif" }}
                   >
                     550 °C{' '}
                   </div>
                 </div>
               </div>
-              <div className="rounded-[10px] border-solid border-[#d0e1fb] border-[0.5px] p-4 flex flex-col gap-4 items-center justify-center shrink-0 w-[200px] relative overflow-hidden">
+              <div className="rounded-[10px] border-solid border-[#d0e1fb] border-[0.5px] p-4 flex flex-col gap-4 items-center justify-center shrink-0  relative overflow-hidden hd:h-[280px]">
                 <div className="flex flex-col gap-4 items-center justify-center shrink-0 relative">
-                  <div className="bg-[#e6effc] rounded-[29.09px] pt-2 pr-[5.45px] pl-[5.45px] flex flex-row gap-[18.18px] items-start justify-center shrink-0 w-11 h-11 relative">
+                  <div className="bg-[#e6effc] rounded-[29.09px] pt-2 pr-[5.45px] pl-[5.45px] flex flex-row gap-[18.18px] items-start justify-center shrink-0 w-11 h-11 hd:w-16 hd:h-16 relative">
                     <svg
-                      className="pb-0.5 flex flex-row gap-2 items-end justify-center shrink-0 relative overflow-visible"
+                      className="pb-0.5 flex flex-row gap-2 items-end justify-center shrink-0 relative overflow-visible w-[22px] h-[22px] hd:w-[35px] hd:h-[35px]"
                       style={{}}
-                      width="22"
-                      height="22"
                       viewBox="0 0 22 22"
                       fill="none"
                       xmlns="http://www.w3.org/2000/svg"
@@ -242,16 +238,16 @@ function Dashboard() {
                   </div>
                   <div className="pr-2 pl-2 flex flex-col gap-[3px] items-center justify-center shrink-0 relative">
                     <div
-                      className="text-[#545a5f] text-left relative flex items-center justify-start"
-                      style={{ font: "700 20px 'Mulish', sans-serif" }}
+                      className="text-[#545a5f] text-left relative flex items-center justify-start font-[700] text-[20px] hd:text-[30px]"
+                      // style={{ font: "700 20px 'Mulish', sans-serif" }}
                     >
                       8.34 mm/s{' '}
                     </div>
                     <div
-                      className="text-[#545a5f] text-left relative flex items-center justify-start"
-                      style={{
-                        font: "var(--small-text-1, 500 12px/20px 'Mulish', sans-serif)",
-                      }}
+                      className="text-[#545a5f] text-left relative flex items-center justify-start font-[500] text-[12px] hd:text-[20px]"
+                      // style={{
+                      //   font: "var(--small-text-1, 500 12px/20px 'Mulish', sans-serif)",
+                      // }}
                     >
                       Avg Vibration{' '}
                     </div>
@@ -266,38 +262,40 @@ function Dashboard() {
                 ></div>
                 <div className="pr-2 pl-2 flex flex-row items-center justify-between self-stretch shrink-0 relative">
                   <div
-                    className="text-[#545a5f] text-left relative flex items-center justify-start"
-                    style={{ font: "500 12px 'Mulish', sans-serif" }}
+                    className="text-[#545a5f] text-left relative flex items-center justify-start font-[500] text-[12px] hd:text-[20px]"
+                    // style={{ font: "500 12px 'Mulish', sans-serif" }}
                   >
                     Max{' '}
                   </div>
                   <div
-                    className="text-[#292c2e] text-left relative flex items-center justify-start"
-                    style={{ font: "700 12px 'Mulish', sans-serif" }}
+                    className="text-[#292c2e] text-left relative flex items-center justify-start font-[700] text-[12px] hd:text-[20px]"
+                    // style={{ font: "700 12px 'Mulish', sans-serif" }}
                   >
                     10.3 mm/s{' '}
                   </div>
                 </div>
               </div>
-              <div className="rounded-[15px] border-solid border-[#d0e1fb] border-[0.5px] pt-4 pr-[30px] pb-4 pl-[30px] flex flex-col gap-2.5 items-start justify-center shrink-0 relative">
+              <div className="rounded-[15px] border-solid border-[#d0e1fb] border-[0.5px] pt-4 pr-[30px] pb-4 pl-[30px] flex flex-col gap-2.5 items-start justify-center shrink-0 relative hd:h-[280px]">
                 <div className="flex flex-row items-end justify-between self-stretch shrink-0 relative">
                   <div className="text-[#545a5f] text-left relative">
                     <span>
-                      <span className="total-failures-span">
+                      <span className="font-[500] text-[10px] leading-[130%] hd:text-[20px]">
                         Total <br />
                       </span>
-                      <span className="total-failures-span2">Failures</span>
+                      <span className="font-[700] text-[16px] leading-[130%] hd:text-[20px]">
+                        Failures
+                      </span>
                     </span>{' '}
                   </div>
                   <div
-                    className="text-[#F0636D] text-left relative flex items-end justify-start"
-                    style={{ font: "700 20px/130% 'Mulish', sans-serif" }}
+                    className="text-[#F0636D] text-left relative flex items-end justify-start font-[700] text-[20px] leading-[130%] hd:text-[20px]"
+                    // style={{ font: "700 20px/130% 'Mulish', sans-serif" }}
                   >
                     20{' '}
                   </div>
                 </div>
                 <div
-                  className="border-solid border-[#d0e1fb] border-t-[0.5px] border-r-[0] border-b-[0] border-l-[0] shrink-0 w-[140px] h-0 relative"
+                  className="border-solid border-[#d0e1fb] border-t-[0.5px] border-r-[0] border-b-[0] border-l-[0] shrink-0 w-[100%] h-0 relative"
                   style={{
                     transformOrigin: '0 0',
                     transform: 'rotate(0deg) scale(1, 1)',
@@ -306,22 +304,24 @@ function Dashboard() {
                 <div className="flex flex-row items-end justify-between self-stretch shrink-0 relative">
                   <div className="text-[#0d3745] text-left relative">
                     <span>
-                      <span className="due-to-temperature-span">
+                      <span className="font-[500] text-[10px] leading-[130%] hd:text-[20px]">
                         Due to
                         <br />
                       </span>
-                      <span className="due-to-temperature-span2">Temperature</span>
+                      <span className="font-[700] text-[16px] leading-[130%] hd:text-[20px]">
+                        Temperature
+                      </span>
                     </span>{' '}
                   </div>
                   <div
-                    className="text-[#292c2e] text-left relative flex items-end justify-start"
-                    style={{ font: "700 20px/130% 'Mulish', sans-serif" }}
+                    className="text-[#292c2e] text-left relative flex items-end justify-start font-[700] text-[20px] leading-[130%] hd:text-[20px]"
+                    // style={{ font: "700 20px/130% 'Mulish', sans-serif" }}
                   >
                     10{' '}
                   </div>
                 </div>
                 <div
-                  className="border-solid border-[#d0e1fb] border-t-[0.5px] border-r-[0] border-b-[0] border-l-[0] shrink-0 w-[140px] h-0 relative"
+                  className="border-solid border-[#d0e1fb] border-t-[0.5px] border-r-[0] border-b-[0] border-l-[0] shrink-0 w-[100%] h-0 relative"
                   style={{
                     transformOrigin: '0 0',
                     transform: 'rotate(0deg) scale(1, 1)',
@@ -330,16 +330,18 @@ function Dashboard() {
                 <div className="flex flex-row items-end justify-between self-stretch shrink-0 relative">
                   <div className="text-[#0d3745] text-left relative">
                     <span>
-                      <span className="due-to-vibration-span">
+                      <span className="font-[500] text-[10px]leading-[130%] hd:text-[20px]">
                         Due to
                         <br />
                       </span>
-                      <span className="due-to-vibration-span2">Vibration</span>
+                      <span className="font-[700] text-[16px] leading-[130%] hd:text-[20px]">
+                        Vibration
+                      </span>
                     </span>{' '}
                   </div>
                   <div
-                    className="text-[#efa71c] text-left relative flex items-end justify-start"
-                    style={{ font: "700 20px/130% 'Mulish', sans-serif" }}
+                    className="text-[#efa71c] text-left relative flex items-end justify-start font-[700] text-[20px] leading-[130%] hd:text-[20px]"
+                    // style={{ font: "700 20px/130% 'Mulish', sans-serif" }}
                   >
                     10{' '}
                   </div>
@@ -348,7 +350,7 @@ function Dashboard() {
             </div>
           </div>
         </div>
-        <div className="flex flex-row items-start justify-between max-w-[1120px] h-9 relative mt-8">
+        <div className="flex flex-row items-start justify-between  h-9 relative mt-8">
           <DashboardDatepicaker
             pageCount={pageCount}
             pageIndex={pageIndex}
@@ -580,7 +582,7 @@ function Dashboard() {
                 </div>
               </div>
               <div
-                className="bg-[#ffffff] rounded-[15px] pr-4 pl-4 mb-4 flex flex-col gap-2.5 items-center justify-end shrink-0 w-[80%] h-[170px] relative"
+                className="bg-[#ffffff] rounded-[15px] pr-4 pl-4 mb-4 flex flex-col gap-2.5 items-center justify-end shrink-0 w-[80%] h-[170px] hd:h-auto relative"
                 style={{ overflowY: 'auto' }}
               >
                 <div className="rounded-[5px] pt-1 pb-1 flex flex-row items-center justify-between self-stretch shrink-0 relative">

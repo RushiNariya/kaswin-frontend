@@ -73,10 +73,42 @@ function SensorCard({
               {selectedSensor?.id === data.id ? (
                 <div className="flex items-center">
                   <span className="text-sm mr-1 text-[#8FB0EF]">selected</span>
-                  <img src={selectedTrendIcon} alt="trend icon" className="w-[95%]" />
+                  <div className="frame-195">
+                    <svg
+                      className="frame-193"
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M2.57153 21.4288C4.35051 15.874 8.33541 5.55377 10.0432 8.71123C12.178 12.6581 13.7568 17.4819 15.5358 16.6049C16.959 15.9032 20.643 6.51848 21.4287 2.57164"
+                        stroke="white"
+                        strokeWidth="2.32653"
+                        strokeLinecap="round"
+                      />
+                    </svg>
+                  </div>
                 </div>
               ) : (
-                <img src={trendIcon} alt="trend icon" className="w-[95%]" />
+                <div className="trend-chart">
+                  <svg
+                    className="frame-193"
+                    width="24"
+                    height="24"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      d="M2.57153 21.4288C4.35051 15.874 8.33541 5.55377 10.0432 8.71123C12.178 12.6581 13.7568 17.4819 15.5358 16.6049C16.959 15.9032 20.643 6.51848 21.4287 2.57164"
+                      stroke="white"
+                      strokeWidth="2.32653"
+                      strokeLinecap="round"
+                    />
+                  </svg>
+                </div>
               )}
 
               {/* <Icon

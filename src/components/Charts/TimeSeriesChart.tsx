@@ -39,10 +39,10 @@ class TimeSeriesChart extends React.Component {
           },
           toolbar: {
             tools: {
-              download: false,
+              download: true,
               selection: false,
               pan: true,
-              zoom: false,
+              zoom: true,
             },
           },
         },

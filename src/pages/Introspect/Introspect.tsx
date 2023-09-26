@@ -14,6 +14,7 @@ import Temperature from '../../components/Charts/Temperature';
 import TimeDomainChart from '../../components/Charts/TimeDomainChart';
 import TimeEChart from '../../components/Charts/TimeEChart';
 import PageLayout from '../../components/PageLayout/PageLayout';
+import TimeChartDropDown from '../../components/TImeChartDropDown';
 import { fetchIntrospectByIdSuccess } from '../../redux/introspects/action';
 import { selectIntrospectList } from '../../redux/introspects/selectors';
 // import introspectList from '../../data/introspectData';
@@ -230,7 +231,7 @@ function Introspect() {
                           Spectrogram
                         </span>
                       </Tab>
-                      <Tab as={React.Fragment}>
+                      {/* <Tab as={React.Fragment}>
                         <span
                           className={
                             selectedIndex === 4
@@ -240,12 +241,13 @@ function Introspect() {
                         >
                           All
                         </span>
-                      </Tab>
+                      </Tab> */}
                     </Tab.List>
                     <Tab.Panels>
                       <Tab.Panel className="">
                         {/* <TimeDomainChart /> */}
-                        <TimeEChart />
+                        {/* <TimeEChart /> */}
+                        <TimeChartDropDown />
                       </Tab.Panel>
                       <Tab.Panel className="">
                         <EChart />
@@ -256,7 +258,7 @@ function Introspect() {
                       <Tab.Panel className="">
                         <Spectrogram />
                       </Tab.Panel>
-                      <Tab.Panel className="">
+                      {/* <Tab.Panel className="">
                         <TimeEChart />
                         <div className="my-3"></div>
                         <EChart />
@@ -264,7 +266,7 @@ function Introspect() {
                         <Temperature />
                         <div className="my-3"></div>
                         <Spectrogram />
-                      </Tab.Panel>
+                      </Tab.Panel> */}
                     </Tab.Panels>
                   </Tab.Group>
                 </div>

@@ -12,20 +12,20 @@ function SpindleListing() {
       name: 'Spindle 1',
       serialNumber: '102938-29394',
       privateKey: '4123-4123-4123-4123',
-      sensors1: 'Sensor A',
-      sensors2: 'Sensor V',
-      sensors3: 'Sensor V',
-      sensors4: 'Sensor A',
+      sensors2: 'Sensor V - Spindle 1',
+      sensors3: 'Sensor V - Spindle 1',
+      sensors1: 'Sensor A - Spindle 1',
+      sensors4: 'Sensor A - Spindle 1',
     },
     {
       id: 2,
       name: 'Spindle 2',
       serialNumber: '102938-29394',
       privateKey: '4123-4123-4123-4123',
-      sensors1: 'Sensor A',
-      sensors2: 'Sensor V',
-      sensors3: 'Sensor V',
-      sensors4: 'Sensor A',
+      sensors1: 'Sensor A - Spindle 2',
+      sensors2: 'Sensor V - Spindle 2',
+      sensors3: 'Sensor V - Spindle 2',
+      sensors4: 'Sensor A - Spindle 2',
     },
   ]);
   const onDragEnd = (result: any) => {
@@ -261,7 +261,7 @@ function SpindleListing() {
                                       </div>
                                     </div>
                                   </div>
-                                  <div className="flex flex-row items-start justify-between self-stretch shrink-0 relative">
+                                  <div className="flex flex-wrap items-start justify-between self-stretch shrink-0 relative">
                                     <div className="flex flex-col gap-1 items-start justify-start shrink-0 relative">
                                       <div
                                         className="text-[#858e93] text-left relative"

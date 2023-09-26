@@ -65,13 +65,16 @@ class ClassificationChart extends React.Component {
 
   render() {
     return (
-      <div className="">
+      <div className="mx-auto w-full h-full">
         <ReactECharts
           option={(this.state as any).options}
-          //   className="w-[900px] ml-[-30px]"
-          style={{
-            height: '400px',
-          }}
+          // className="w-[900px] ml-[-30px]"
+          style={
+            {
+              // height: '1000px',
+            }
+          }
+          className="min-h-screen -mt-[8%] sm:min-h-[400px] sm:-mt-[0%] md:min-h-[400px] md:-mt-[8%] lg:min-h-[400px] lg:-mt-[8%] xl:min-h-[600px] xl:-mt-[8%] hd:min-h-[1000px] hd:-mt-[8%] 2hd:min-h-[1400px] 2hd:-mt-[8%]"
         />
       </div>
     );

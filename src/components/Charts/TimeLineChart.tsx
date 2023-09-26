@@ -56,8 +56,18 @@ class TimeLineChart extends React.Component {
         chart: {
           height: 350,
           type: 'rangeBar',
+          zoom: {
+            type: 'x',
+            enabled: true,
+            autoScaleYaxis: true,
+          },
           toolbar: {
-            show: false,
+            tools: {
+              download: false,
+              selection: false,
+              pan: true,
+              zoom: false,
+            },
           },
         },
         colors: ['#4796C3', '#82649F'],
@@ -135,6 +145,16 @@ class TimeLineChart extends React.Component {
             },
           },
         },
+        responsive: [
+          {
+            breakpoint: 2300,
+            options: {
+              chart: {
+                height: 350,
+              },
+            },
+          },
+        ],
       },
     };
   }
@@ -146,8 +166,8 @@ class TimeLineChart extends React.Component {
           options={(this.state as any).options}
           series={(this.state as any).series}
           type="rangeBar"
-          height={350}
-          width={1000}
+          height={700}
+          width="180%"
         />
       </div>
     );

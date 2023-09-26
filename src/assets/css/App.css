@@ -370,8 +370,37 @@ input[type='number'] {
   border-radius: 100%;
   left: -50%;
   top: 0;
-  box-shadow: 0 300px 0 300px #e6effc !important;
+  box-shadow: 0 300px 0 300px #426ab9 !important;
   rotate: -180deg;
+}
+
+/* (1920x1080) Full HD Display */
+@media screen and (min-width: 1920px) {
+  .introspect-card::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    scale: 1.6;
+    border-radius: 100%;
+    left: -70%;
+    top: 0;
+    box-shadow: 0 300px 0 500px #bbc0c3 !important;
+    rotate: -180deg;
+  }
+
+  .introspect-card-selected::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    scale: 1.4;
+    border-radius: 100%;
+    left: -70%;
+    top: 0;
+    box-shadow: 0 300px 0 500px #426ab9 !important;
+    rotate: -180deg;
+  }
 }
 
 /* .introspect-card:hover {
@@ -380,4 +409,61 @@ input[type='number'] {
 
 .remember_me input[type='checkbox'] {
   accent-color: black;
+}
+
+.trend-chart,
+.trend-chart * {
+  box-sizing: border-box;
+}
+.trend-chart {
+  background: var(--main-blue-blue-6, #3a4f78);
+  border-radius: var(--border-radius-border-radius-medium, 12px);
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+  box-shadow: 0px 1px 5px 0px rgba(66, 106, 185, 0.3);
+}
+.frame-193 {
+  padding: 3.43px;
+  display: flex;
+  flex-direction: row;
+  gap: 8.57px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  overflow: visible;
+}
+
+.frame-195,
+.frame-195 * {
+  box-sizing: border-box;
+}
+.frame-195 {
+  background: var(--main-blue-blue-1, #8fb0ef);
+  border-radius: var(--border-radius-border-radius-medium, 12px);
+  padding: 8px;
+  display: flex;
+  flex-direction: row;
+  gap: 8px;
+  align-items: center;
+  justify-content: flex-start;
+  flex-shrink: 0;
+  position: relative;
+  box-shadow: 0px 1px 5px 0px rgba(66, 106, 185, 0.3);
+}
+.frame-193 {
+  padding: 3.43px;
+  display: flex;
+  flex-direction: row;
+  gap: 8.57px;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  position: relative;
+  overflow: visible;
 }

@@ -7,6 +7,10 @@ export default {
   ],
   theme: {
     extend: {
+      screens: {
+        hd: '2200px',
+        '2hd': '3000px',
+      },
       fontFamily: {
         mulish: ['Mulish', 'Arial', 'sans-serif'],
       },

@@ -3,7 +3,7 @@ import { SensorsListType } from '../types/types';
 const sensorsList: SensorsListType[] = [
   {
     id: 1,
-    name: 'Sensor 1',
+    name: 'Spindle 1',
     sensorId: 'SNS1234',
     running: false,
     sensorType: 'A sensor',
@@ -12,7 +12,7 @@ const sensorsList: SensorsListType[] = [
   },
   {
     id: 2,
-    name: 'Sensor 2',
+    name: 'Spindle 2',
     sensorId: 'SNS1234',
     running: false,
     sensorType: 'V sensor',
@@ -21,7 +21,7 @@ const sensorsList: SensorsListType[] = [
   },
   {
     id: 3,
-    name: 'Sensor 3',
+    name: 'Spindle 3',
     sensorId: 'SNS1234',
     running: true,
     sensorType: 'A sensor',
@@ -30,7 +30,7 @@ const sensorsList: SensorsListType[] = [
   },
   {
     id: 4,
-    name: 'Sensor 4',
+    name: 'Spindle 4',
     sensorId: 'SNS1234',
     running: false,
     sensorType: 'V sensor',
@@ -39,7 +39,7 @@ const sensorsList: SensorsListType[] = [
   },
   {
     id: 5,
-    name: 'spindle 5',
+    name: 'Spindle 5',
     sensorId: 'SNS1234',
     running: true,
     sensorType: 'A sensor',

@@ -49,6 +49,14 @@ export class Temperature extends Component {
             animation: false,
           },
         },
+        toolbox: {
+          feature: {
+            saveAsImage: {
+              name: 'Temperature_Chart',
+              type: 'png',
+            },
+          },
+        },
         xAxis: {
           type: 'category',
         },

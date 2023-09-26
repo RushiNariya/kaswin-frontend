@@ -118,49 +118,49 @@ function SpindleDetail() {
         </div>
       </div>
 
-      <div className="bg-[#f1f1f1] rounded-[24px]  relative left-0 bottom-0 p-6">
+      <div className="bg-[#f1f1f1] rounded-[24px] w-[100%]  relative left-0 bottom-0 p-6 hd:p-10">
         <div className="flex flex-row items-start justify-between relative ">
           <div
-            className="text-[#000000] text-left relative flex items-center justify-start"
-            style={{
-              font: "var(--headline-1-extrabold, 800 24px/32px 'Mulish', sans-serif)",
-            }}
+            className="text-[#000000] text-left relative flex items-center justify-start font-[800] text-[24px] leading-[32px] hd:text-[35px]"
+            // style={{
+            //   font: "var(--headline-1-extrabold, 800 24px/32px 'Mulish', sans-serif)",
+            // }}
           >
             Spindle 1{' '}
           </div>
           <div className="flex flex-row gap-2 items-start justify-start shrink-0 h-[60px] relative">
             <div className="flex flex-col gap-2 items-end justify-start shrink-0 relative">
               <div
-                className="text-[#292c2e] text-left relative flex items-center justify-start"
-                style={{
-                  font: "var(--body-text-1, 500 16px/24px 'Mulish', sans-serif)",
-                }}
+                className="text-[#292c2e] text-left relative flex items-center justify-start font-[500] text-[16px] leading-[24px] hd:text-[20px]"
+                // style={{
+                //   font: "var(--body-text-1, 500 16px/24px 'Mulish', sans-serif)",
+                // }}
               >
                 Avg Temperature :{' '}
               </div>
               <div
-                className="text-[#292c2e] text-left relative flex items-center justify-start"
-                style={{
-                  font: "var(--body-text-1, 500 16px/24px 'Mulish', sans-serif)",
-                }}
+                className="text-[#292c2e] text-left relative flex items-center justify-start font-[500] text-[16px] leading-[24px] hd:text-[20px] "
+                // style={{
+                //   font: "var(--body-text-1, 500 16px/24px 'Mulish', sans-serif)",
+                // }}
               >
                 Avg Vibration :{' '}
               </div>
             </div>
             <div className="flex flex-col gap-2 items-start justify-start shrink-0 relative">
               <div
-                className="text-[#4d78cb] text-left relative flex items-center justify-start"
-                style={{
-                  font: "var(--headline-3-extrabold, 800 16px/24px 'Mulish', sans-serif)",
-                }}
+                className="text-[#4d78cb] text-left relative flex items-center justify-start font-[800] text-[16px] leading-[24px] hd:text-[20px]"
+                // style={{
+                //   font: "var(--headline-3-extrabold, 800 16px/24px 'Mulish', sans-serif)",
+                // }}
               >
                 550 °C{' '}
               </div>
               <div
-                className="text-[#4d78cb] text-left relative flex items-center justify-start"
-                style={{
-                  font: "var(--headline-3-extrabold, 800 16px/24px 'Mulish', sans-serif)",
-                }}
+                className="text-[#4d78cb] text-left relative flex items-center justify-start font-[800] text-[16px] leading-[24px] hd:text-[20px]"
+                // style={{
+                //   font: "var(--headline-3-extrabold, 800 16px/24px 'Mulish', sans-serif)",
+                // }}
               >
                 8.34 mm/s{' '}
               </div>
@@ -168,7 +168,7 @@ function SpindleDetail() {
           </div>
         </div>
         <img
-          className="w-[522.68px] h-[286.28px] relative bg-transparent"
+          className="w-[98%] h-[60%] relative bg-transparent"
           src={SensorImages}
           alt="sensor_image"
         />

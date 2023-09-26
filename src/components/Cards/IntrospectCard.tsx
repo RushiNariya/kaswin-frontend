@@ -13,14 +13,14 @@ function IntrospectCard({
   selectIntrospectHandler: (data: IntrospectListType) => void;
 }) {
   return (
-    <div className="text-center w-full min-w-[100px] max-w-[300px]">
+    <div className="text-center w-full min-w-[100px]">
       <div className="w-full">
         <div
           onClick={() => selectIntrospectHandler(data)}
           className={`object-cover  cursor-pointer hover:scale-105 transform
-        transition duration-500 overflow-hidden w-full relative object-center flex flex-col gap-y-6 justify-between h-40 p-4 py-6 mx-auto rounded-3xl border-2 ${
+        transition duration-500 overflow-hidden w-full relative object-center flex flex-col gap-y-6 justify-between h-40 hd:min-h-[215px] p-4 py-6 mx-auto rounded-3xl border-2 ${
           selectedIntrospect?.id === data.id
-            ? 'border-2 border-[#8FB0EF] introspect-card-selected'
+            ? 'border-2 border-[#426AB9] introspect-card-selected'
             : 'introspect-card'
         }`}
         >
