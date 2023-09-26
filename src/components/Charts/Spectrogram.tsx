@@ -98,7 +98,7 @@ export class Spectrogram extends Component {
     this.state = {
       option: {
         // backgroundColor: '#3232FF',
-        color: ['#FF4C4C', '#00FF00'],
+        color: ['#5470c6', '#fac858'],
         // title: {
         //   text: 'Male and female height and weight distribution',
         //   subtext: 'Data from: Heinz 2003',
@@ -201,7 +201,7 @@ export class Spectrogram extends Component {
               // focus: 'series',
               itemStyle: {
                 // scale: '1.4',
-                color: '#b30000',
+                color: '#324c9c',
               },
             },
             // prettier-ignore
@@ -266,7 +266,7 @@ export class Spectrogram extends Component {
               // focus: 'series',
               itemStyle: {
                 // scale: '1.4',
-                color: '#003400',
+                color: '#a88331',
               },
             },
             // prettier-ignore

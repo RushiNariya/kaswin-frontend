@@ -353,9 +353,9 @@ input[type='number'] {
   position: absolute;
   width: 100%;
   height: 100%;
-  scale: 1.4;
+  scale: 1.8;
   border-radius: 100%;
-  left: -50%;
+  left: -80%;
   top: 0;
   box-shadow: 0 300px 0 300px #bbc0c3 !important;
   rotate: -180deg;
@@ -366,9 +366,9 @@ input[type='number'] {
   position: absolute;
   width: 100%;
   height: 100%;
-  scale: 1.4;
+  scale: 1.8;
   border-radius: 100%;
-  left: -50%;
+  left: -80%;
   top: 0;
   box-shadow: 0 300px 0 300px #426ab9 !important;
   rotate: -180deg;

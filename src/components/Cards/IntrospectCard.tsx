@@ -13,7 +13,7 @@ function IntrospectCard({
   selectIntrospectHandler: (data: IntrospectListType) => void;
 }) {
   return (
-    <div className="text-center w-full min-w-[100px]">
+    <div className="text-center w-full min-w-[100px] max-w-[50%] lg:max-w-[100%]">
       <div className="w-full">
         <div
           onClick={() => selectIntrospectHandler(data)}
