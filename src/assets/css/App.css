@@ -353,9 +353,9 @@ input[type='number'] {
   position: absolute;
   width: 100%;
   height: 100%;
-  scale: 1.8;
+  scale: 2;
   border-radius: 100%;
-  left: -70%;
+  left: -75%;
   top: 0;
   box-shadow: 0 300px 0 300px #bbc0c3 !important;
   rotate: -180deg;
@@ -366,9 +366,9 @@ input[type='number'] {
   position: absolute;
   width: 100%;
   height: 100%;
-  scale: 1.8;
+  scale: 2;
   border-radius: 100%;
-  left: -70%;
+  left: -75%;
   top: 0;
   box-shadow: 0 300px 0 300px #426ab9 !important;
   rotate: -180deg;
@@ -376,6 +376,39 @@ input[type='number'] {
 
 /* (1920x1080) Full HD Display */
 @media screen and (min-width: 1920px) {
+  .introspect-card::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    scale: 1.6;
+    border-radius: 100%;
+    left: -70%;
+    top: 0;
+    box-shadow: 0 300px 0 500px #bbc0c3 !important;
+    rotate: -180deg;
+  }
+
+  .introspect-card-selected::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    scale: 1.6;
+    border-radius: 100%;
+    left: -70%;
+    top: 0;
+    box-shadow: 0 300px 0 500px #426ab9 !important;
+    rotate: -180deg;
+  }
+}
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
   .introspect-card::before {
     content: '';
     position: absolute;
