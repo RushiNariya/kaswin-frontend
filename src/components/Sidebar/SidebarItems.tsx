@@ -23,59 +23,61 @@ const SidebarItems = ({ item }: { item: routeType | routeTypeChildren }) => {
 
   if ('children' in item) {
     return (
-      <div className={open ? 'open children bg-white' : 'sidebar-item children'}>
-        {/* <div className="sidebar-title" onClick={() => setOpen(!open)}> */}
-        <NavLink
-          to={item.path || '/'}
-          className={(navData) =>
-            navData.isActive ? 'sidebar-title child-active' : 'sidebar-title'
-          }
-          onClick={() => {
-            setOpen(!open);
-          }}
-        >
-          <span>
-            {item.manualIcon ? (
-              <img src={item.icon} className="mr-2 mb-1 inline-block" alt="images" />
-            ) : (
-              <Icon
-                icon={item.icon}
-                className="pr-2 inline-block"
-                height={30}
-                width={30}
-              />
-            )}
-            <span className={isOpen ? 'font-bold' : 'hidden'}>{item.title}</span>
-          </span>
-          {open ? (
-            <Icon icon="fluent:chevron-down-up-24-filled" width="20" height="20" />
-          ) : (
-            <Icon icon="ph:caret-up-down-bold" width="20" height="20" />
-          )}
-        </NavLink>
-        {/* </div> */}
-        <div className="sidebar-content">
-          {item.children.map((item, index) => (
-            <NavLink
-              key={index}
-              to={item.path || '/'}
-              className={(navData) =>
-                navData.isActive ? 'sidebar-item plain active' : 'sidebar-item plain'
-              }
-            >
+      <div className={isOpen && open ? 'p-3' : 'p-1'}>
+        <div className={open ? 'open children bg-white' : 'sidebar-item children'}>
+          {/* <div className="sidebar-title" onClick={() => setOpen(!open)}> */}
+          <NavLink
+            to={item.path || '/'}
+            className={(navData) =>
+              navData.isActive ? 'sidebar-title child-active' : 'sidebar-title'
+            }
+            onClick={() => {
+              setOpen(!open);
+            }}
+          >
+            <span>
               {item.manualIcon ? (
                 <img src={item.icon} className="mr-2 mb-1 inline-block" alt="images" />
               ) : (
                 <Icon
                   icon={item.icon}
-                  className="mr-2 mb-1 inline-block"
-                  height={25}
-                  width={25}
+                  className="pr-2 inline-block"
+                  height={30}
+                  width={30}
                 />
               )}
               <span className={isOpen ? 'font-bold' : 'hidden'}>{item.title}</span>
-            </NavLink>
-          ))}
+            </span>
+            {open ? (
+              <Icon icon="fluent:chevron-down-up-24-filled" width="20" height="20" />
+            ) : (
+              <Icon icon="ph:caret-up-down-bold" width="20" height="20" />
+            )}
+          </NavLink>
+          {/* </div> */}
+          <div className="sidebar-content">
+            {item.children.map((item, index) => (
+              <NavLink
+                key={index}
+                to={item.path || '/'}
+                className={(navData) =>
+                  navData.isActive ? 'sidebar-item plain active' : 'sidebar-item plain'
+                }
+              >
+                {item.manualIcon ? (
+                  <img src={item.icon} className="mr-2 mb-1 inline-block" alt="images" />
+                ) : (
+                  <Icon
+                    icon={item.icon}
+                    className="mr-2 mb-1 inline-block"
+                    height={25}
+                    width={25}
+                  />
+                )}
+                <span className={isOpen ? 'font-bold' : 'hidden'}>{item.title}</span>
+              </NavLink>
+            ))}
+          </div>
         </div>
       </div>
     );
