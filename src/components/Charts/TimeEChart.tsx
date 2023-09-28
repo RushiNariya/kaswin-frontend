@@ -160,6 +160,9 @@ function TimeEChart() {
           },
         },
       },
+      grid: {
+        top: 80,
+      },
       series: [
         {
           name: 'Temperature1',

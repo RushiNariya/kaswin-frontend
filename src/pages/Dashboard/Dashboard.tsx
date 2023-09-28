@@ -512,10 +512,10 @@ function Dashboard() {
                     AI Diagnosis{' '}
                   </div>
                   <svg
-                    className="rounded-[5px] p-2 flex flex-row gap-2.5 items-start justify-start shrink-0 relative overflow-visible"
+                    className="rounded-[5px] cursor-pointer p-2 flex flex-row gap-2.5 items-start justify-start shrink-0 relative overflow-visible"
                     style={{}}
-                    width="30"
-                    height="30"
+                    width="40"
+                    height="40"
                     viewBox="0 0 30 30"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"

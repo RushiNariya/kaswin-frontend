@@ -23,7 +23,7 @@ const SidebarItems = ({ item }: { item: routeType | routeTypeChildren }) => {
 
   if ('children' in item) {
     return (
-      <div className={isOpen && open ? 'p-3' : 'p-1'}>
+      <div className={isOpen ? 'p-[0.75rem]' : isOpen && open ? 'p-3' : 'p-1'}>
         <div className={open ? 'open children bg-white' : 'sidebar-item children'}>
           {/* <div className="sidebar-title" onClick={() => setOpen(!open)}> */}
           <NavLink

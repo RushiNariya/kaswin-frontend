@@ -311,6 +311,9 @@ function EChart() {
           },
         },
       },
+      grid: {
+        top: 80,
+      },
       xAxis: [
         {
           type: 'category',

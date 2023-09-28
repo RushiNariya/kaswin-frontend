@@ -93,7 +93,7 @@ class TimeSeriesChart extends React.Component {
             return ` <div class="tooltip-box">
                 <div style="margin-bottom: 5px; font-size: 0.6rem; opacity: 0.5;">${
                   this.xPoints[value?.dataPointIndex]
-                } am</div>
+                } </div>
                 <h2 style="font-weight: 700; margin-bottom: 5px;">${
                   value.series[0][value?.dataPointIndex]
                 } m/s</h2>

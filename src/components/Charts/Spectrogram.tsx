@@ -125,17 +125,10 @@ export class Spectrogram extends Component {
           formatter: function (params: any) {
             if (params.value.length > 1) {
               return (
-                params.seriesName +
-                ' :<br/>' +
-                params.value[0] +
-                'cm ' +
-                params.value[1] +
-                'kg '
+                params.seriesName + ' :<br/>' + params.value[0] + ', ' + params.value[1]
               );
             } else {
-              return (
-                params.seriesName + ' :<br/>' + params.name + ' : ' + params.value + 'kg '
-              );
+              return params.seriesName + ' :<br/>' + params.name + ', ' + params.value;
             }
           },
           // axisPointer: {
@@ -169,12 +162,15 @@ export class Spectrogram extends Component {
         //   left: 'center',
         //   bottom: 10,
         // },
+        grid: {
+          top: 80,
+        },
         xAxis: [
           {
             type: 'value',
             scale: true,
             axisLabel: {
-              formatter: '{value} cm',
+              formatter: '{value}',
             },
             splitLine: {
               show: false,
@@ -186,7 +182,7 @@ export class Spectrogram extends Component {
             type: 'value',
             scale: true,
             axisLabel: {
-              formatter: '{value} kg',
+              formatter: '{value}',
             },
             splitLine: {
               show: false,
@@ -195,7 +191,7 @@ export class Spectrogram extends Component {
         ],
         series: [
           {
-            name: 'Female',
+            name: 'Heat',
             type: 'scatter',
             emphasis: {
               // focus: 'series',
@@ -260,7 +256,7 @@ export class Spectrogram extends Component {
                   ],
           },
           {
-            name: 'Male',
+            name: 'Temperature',
             type: 'scatter',
             emphasis: {
               // focus: 'series',

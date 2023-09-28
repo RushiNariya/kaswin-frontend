@@ -57,6 +57,7 @@ export class Temperature extends Component {
             },
           },
         },
+
         xAxis: {
           type: 'category',
         },

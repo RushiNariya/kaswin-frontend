@@ -262,6 +262,9 @@ function DaysEChart() {
       // dataLabels: {
       //   enabled: false,
       // },
+      grid: {
+        top: 80,
+      },
       xAxis: {
         type: 'category',
         tickAmount: 10,
