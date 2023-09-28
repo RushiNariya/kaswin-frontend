@@ -1,4 +1,4 @@
-import { Listbox, Transition } from '@headlessui/react';
+import { Dialog, Listbox, Transition } from '@headlessui/react';
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid';
 import { set } from 'lodash';
 import React from 'react';
@@ -7,6 +7,7 @@ import Datepicker from 'react-tailwindcss-datepicker';
 
 import TimeLineChart from '../../components/Charts/TimeLineChart';
 import DashboardDatepicaker from '../../components/Datepicker/DashboardDatepicaker';
+import DashboardDiagnosisChartModal from '../../components/Modal/DashboardDiagnosisChartModal';
 import PageLayout from '../../components/PageLayout/PageLayout';
 import StatusCard from './StatusCard';
 
@@ -15,11 +16,20 @@ function Dashboard() {
   const [pageIndex, setPageIndex] = React.useState<number>(0);
   const [pageCount, setPageCount] = React.useState<number>(31);
   const [selectedDate, setSelectedDate] = React.useState<string | null>(null);
+  const [open, setOpen] = useState(false);
 
   const [value, setValue] = React.useState({
     startDate: null,
     endDate: null,
   });
+
+  const handleClose = () => {
+    setOpen(false);
+  };
+
+  const handleClickOpen = () => {
+    setOpen(true);
+  };
 
   const handleValueChange = (newValue: any) => {
     setValue(newValue);
@@ -499,7 +509,7 @@ function Dashboard() {
               <TimeLineChart />
             </div>
           </div>
-          <div className="flex flex-col items-center justify-center shrink-0 relative mt-4">
+          <div className="flex flex-col items-center justify-center shrink-0 relative mt-4 cursor-pointer">
             <div className="bg-[#e6effc] rounded-[25px] border-solid border-[#e6effc] border-4 flex flex-col gap-[9px] items-center justify-start self-stretch flex-1 relative">
               <div className="rounded-tl-[25px] rounded-tr-[25px] pt-6 pr-6 pl-6 flex flex-col gap-3 items-start justify-center self-stretch shrink-0 relative">
                 <div className="flex flex-row items-center justify-between self-stretch shrink-0 relative">
@@ -514,8 +524,9 @@ function Dashboard() {
                   <svg
                     className="rounded-[5px] cursor-pointer p-2 flex flex-row gap-2.5 items-start justify-start shrink-0 relative overflow-visible"
                     style={{}}
-                    width="40"
-                    height="40"
+                    onClick={handleClickOpen}
+                    width="45"
+                    height="45"
                     viewBox="0 0 30 30"
                     fill="none"
                     xmlns="http://www.w3.org/2000/svg"
@@ -708,6 +719,7 @@ function Dashboard() {
               </div>
             </div>
           </div>
+          <DashboardDiagnosisChartModal open={open} handleClose={handleClose} />
         </div>
       </div>
     </PageLayout>
