@@ -35,7 +35,7 @@ function AdminLayout() {
                 <Route path="dashboard" element={<Dashboard />} />
                 <Route path="sensors" element={<Sensors />} />
                 <Route path="introspect" element={<Introspect />} />
-                {/* <Route path="introspect" element={<NonPremiumIntrospect />} /> */}
+                <Route path="introspect/non-premium" element={<NonPremiumIntrospect />} />
                 <Route path="setting" element={<Settings />} />
                 <Route path="help" element={<Help />} />
                 <Route path="AI-diagnosis" element={<AIDiagnosis />} />
