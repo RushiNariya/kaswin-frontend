@@ -2,6 +2,7 @@ import { Tab } from '@headlessui/react';
 import { Icon } from '@iconify/react';
 import React from 'react';
 import { useDispatch } from 'react-redux';
+import { Link } from 'react-router-dom';
 
 import batteryLevelIcon from '../../assets/images/battery_level.png';
 import dataCountIcon from '../../assets/images/data_count.png';
@@ -272,8 +273,18 @@ function Introspect() {
                 </div>
               </div>
             ) : (
-              <div className="w-full justify-center items-start mt-10 flex lg:col-span-4 xl:col-span-5 w-full font-bold text-xl">
-                Please select any sensor to view further !
+              <div className="w-full justify-center items-start mt-10 flex lg:col-span-4 xl:col-span-5 font-bold text-xl">
+                <div>
+                  Please select any sensor to view further !
+                  <div className="mt-3">
+                    <Link
+                      className="hover:underline font-normal"
+                      to={'/introspect/non-premium'}
+                    >
+                      click here for non-premium
+                    </Link>
+                  </div>
+                </div>
               </div>
             )}
           </div>
