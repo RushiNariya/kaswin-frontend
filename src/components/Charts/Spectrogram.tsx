@@ -112,7 +112,7 @@ export class Spectrogram extends Component {
         legend: {
           // backgroundColor: '#ccc',
           textStyle: {
-            fontSize: '1rem',
+            fontSize: '0.9rem',
           },
           icon: 'circle',
           orient: 'horizontal',
@@ -163,7 +163,7 @@ export class Spectrogram extends Component {
         //   bottom: 10,
         // },
         grid: {
-          top: 80,
+          top: 100,
         },
         xAxis: [
           {
@@ -332,7 +332,7 @@ export class Spectrogram extends Component {
           option={(this.state as any).option}
           // className="w-[900px] ml-[-30px]"
           style={{
-            height: '400px',
+            height: '450px',
             overflow: 'scroll',
             backgroundColor: '#F1F1F1',
             borderRadius: '10px',

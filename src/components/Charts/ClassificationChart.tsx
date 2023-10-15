@@ -74,7 +74,7 @@ class ClassificationChart extends React.Component {
               // height: '1000px',
             }
           }
-          className="min-h-screen -mt-[8%] sm:min-h-[400px] sm:-mt-[0%] md:min-h-[400px] md:-mt-[8%] lg:min-h-[400px] lg:-mt-[8%] xl:min-h-[600px] xl:-mt-[8%] hd:min-h-[1000px] hd:-mt-[8%] 2hd:min-h-[1400px] 2hd:-mt-[8%]"
+          className="min-h-screen -mt-[8%] sm:min-h-[400px] sm:-mt-[0%] md:min-h-[400px] md:-mt-[8%] lg:min-h-[600px] lg:-mt-[8%] xl:min-h-[350px] xl:-mt-[0%] 2xl:min-h-[600px] 2xl:-mt-[14%] hd:min-h-[800px] hd:-mt-[8%] 2hd:min-h-[1000px] 2hd:-mt-[8%] 3hd:min-h-[1200px] 3hd:-mt-[8%]"
         />
       </div>
     );

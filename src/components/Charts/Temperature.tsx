@@ -85,7 +85,7 @@ export class Temperature extends Component {
           option={(this.state as any).options}
           // className="w-[900px] ml-[-30px]"
           style={{
-            height: '400px',
+            height: '450px',
             overflow: 'scroll',
             backgroundColor: '#F1F1F1',
             borderRadius: '10px',

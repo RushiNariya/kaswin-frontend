@@ -5,6 +5,7 @@ import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 
 function SpindleListing() {
   const [addSpindle, setAddSpindle] = useState(false);
+  const [isEdit, setIsEdit] = useState(false);
 
   const [SpindleList, setSpindleList] = useState([
     {
@@ -16,6 +17,7 @@ function SpindleListing() {
       sensors3: 'Sensor V - 102938-29394',
       sensors1: 'Sensor A - 102938-29394',
       sensors4: 'Sensor A - 102938-29394',
+      isEdit: false,
     },
     {
       id: 2,
@@ -26,6 +28,7 @@ function SpindleListing() {
       sensors2: 'Sensor V - 102938-29394',
       sensors3: 'Sensor V - 102938-29394',
       sensors4: 'Sensor A - 102938-29394',
+      isEdit: false,
     },
   ]);
   const onDragEnd = (result: any) => {
@@ -40,9 +43,29 @@ function SpindleListing() {
     setSpindleList(items);
   };
 
+  const editRow = (row: any) => {
+    const updatedRows = SpindleList.map((r) => {
+      if (r === row) {
+        return { ...r, isEdit: true };
+      }
+      return r;
+    });
+    setSpindleList(updatedRows);
+  };
+
+  const saveRow = (row: any) => {
+    const updatedRows = SpindleList.map((r) => {
+      if (r === row) {
+        return { ...r, isEdit: false };
+      }
+      return r;
+    });
+    setSpindleList(updatedRows);
+  };
+
   return (
     <div className="w-full px-10 ">
-      <div className="flex flex-row items-center justify-between">
+      <div className="flex flex-row items-center justify-between px-8">
         <div
           className="text-[#000000] text-left relative"
           style={{
@@ -85,12 +108,12 @@ function SpindleListing() {
           </button>
         </div>
       </div>
-      <div className="w-full px-4 pt-16">
+      <div className="w-full px-4 pt-5">
         <DragDropContext onDragEnd={(result) => onDragEnd(result)}>
           <Droppable droppableId="droppable">
             {(provided) => (
               <div
-                className="mx-auto w-full  rounded-2xl bg-white p-2"
+                className="mx-auto w-full  rounded-2xl bg-white"
                 ref={provided.innerRef}
                 {...provided.droppableProps}
               >
@@ -113,112 +136,170 @@ function SpindleListing() {
                         >
                           {({ open }) => (
                             <>
-                              <Disclosure.Button className="flex w-full  pt-6 pr-8 pb-6 pl-8  flex-row gap-8 items-start justify-center self-stretch shrink-0 relative">
-                                <div className="flex flex-col gap-[6.67px] items-center justify-center shrink-0 w-6 h-6 relative">
-                                  <svg
-                                    className="flex flex-col gap-1 items-start justify-start shrink-0 relative overflow-visible"
-                                    style={{}}
-                                    width="14"
-                                    height="8"
-                                    viewBox="0 0 14 8"
-                                    fill="none"
-                                    xmlns="http://www.w3.org/2000/svg"
-                                  >
-                                    <line
-                                      x1="0.333008"
-                                      y1="3.33333"
-                                      x2="13.6663"
-                                      y2="3.33333"
-                                      stroke="#858E93"
-                                      strokeWidth="1.33333"
-                                    />
-                                    <line
-                                      x1="0.333008"
-                                      y1="7.33333"
-                                      x2="13.6663"
-                                      y2="7.33333"
-                                      stroke="#858E93"
-                                      strokeWidth="1.33333"
-                                    />
-                                    <line
-                                      x1="0.333984"
-                                      y1="7.48763"
-                                      x2="13.6673"
-                                      y2="7.48763"
-                                      stroke="#858E93"
-                                      strokeWidth="1.33333"
-                                    />
-                                  </svg>
-                                </div>
-                                <div className="flex flex-col gap-8 items-start justify-start flex-1 relative">
-                                  <div className="flex flex-row items-center justify-between self-stretch shrink-0 relative">
-                                    <div className="flex flex-row gap-4 items-center justify-start shrink-0 relative">
-                                      <div
-                                        className="text-[#000000] text-left relative"
-                                        style={{
-                                          font: "var(--headline-3-bold, 700 16px/24px 'Mulish', sans-serif)",
-                                        }}
-                                      >
-                                        {spindle.name}{' '}
-                                      </div>
-                                      <div className="flex flex-col gap-[4.05px] items-center justify-center shrink-0 w-[22px] h-[22px] relative">
-                                        <div className="flex flex-col gap-[2.75px] items-center justify-center shrink-0 relative">
-                                          <div className="shrink-0 w-[13.05px] h-[12.83px] static">
-                                            <svg
-                                              className="absolute left-[1.73px] top-0 overflow-visible"
-                                              style={{}}
-                                              width="14"
-                                              height="14"
-                                              viewBox="0 0 14 14"
-                                              fill="none"
-                                              xmlns="http://www.w3.org/2000/svg"
-                                            >
-                                              <path
-                                                d="M9.26621 3.22754L0.734065 11.7767L0.476562 13.3109L2.00674 12.9971L10.5599 4.46897L9.26621 3.22754Z"
-                                                fill="#AECAF4"
-                                                stroke="#AECAF4"
-                                                strokeWidth="1.37499"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                              />
-                                              <path
-                                                d="M11.8677 0.754152L11.1934 1.42791L12.5718 2.8063L13.2461 2.13197C13.423 1.95491 13.5224 1.71483 13.5224 1.46451C13.5224 1.21419 13.423 0.974116 13.2461 0.797048L13.2032 0.754152C13.1155 0.666456 13.0114 0.596891 12.8968 0.549429C12.7822 0.501968 12.6594 0.477539 12.5354 0.477539C12.4114 0.477539 12.2886 0.501968 12.174 0.549429C12.0595 0.596891 11.9554 0.666456 11.8677 0.754152Z"
-                                                stroke="#AECAF4"
-                                                strokeWidth="1.83333"
-                                                strokeLinecap="round"
-                                                strokeLinejoin="round"
-                                              />
-                                            </svg>
-                                          </div>
-                                          <div className="border-solid border-[#aecaf4] border-t-[1.74px] border-r-[0] border-b-[0] border-l-[0] shrink-0 w-[16.5px] h-0 relative"></div>
-                                        </div>
-                                      </div>
-                                    </div>
-                                    <div className="flex flex-row gap-8 items-center justify-start shrink-0 relative">
-                                      <svg
-                                        className="flex flex-col gap-1 items-center justify-center shrink-0 relative overflow-visible"
-                                        style={{}}
-                                        width="26"
-                                        height="25"
-                                        viewBox="0 0 26 25"
-                                        fill="none"
-                                        xmlns="http://www.w3.org/2000/svg"
-                                      >
-                                        <path
-                                          d="M19.8209 6.24407H16.2058V5.34029C16.2058 4.94079 16.0471 4.55766 15.7646 4.27517C15.4821 3.99268 15.099 3.83398 14.6995 3.83398H11.6868C11.2874 3.83398 10.9042 3.99268 10.6217 4.27517C10.3392 4.55766 10.1805 4.94079 10.1805 5.34029V6.24407H6.56541C6.40561 6.24407 6.25236 6.30755 6.13937 6.42055C6.02637 6.53354 5.96289 6.68679 5.96289 6.84659C5.96289 7.00639 6.02637 7.15965 6.13937 7.27264C6.25236 7.38564 6.40561 7.44911 6.56541 7.44911H7.20559L7.92109 18.9317C7.97456 19.9428 8.74955 20.7046 9.72865 20.7046H16.6577C17.6416 20.7046 18.4012 19.9597 18.4652 18.9347L19.1807 7.44911H19.8209C19.9807 7.44911 20.1339 7.38564 20.2469 7.27264C20.3599 7.15965 20.4234 7.00639 20.4234 6.84659C20.4234 6.68679 20.3599 6.53354 20.2469 6.42055C20.1339 6.30755 19.9807 6.24407 19.8209 6.24407ZM10.8045 18.2945H10.7831C10.6269 18.2946 10.4768 18.2341 10.3644 18.1257C10.252 18.0173 10.1861 17.8695 10.1805 17.7135L9.87928 9.27815C9.87359 9.11835 9.93161 8.96283 10.0406 8.84581C10.1495 8.72879 10.3005 8.65985 10.4603 8.65416C10.6201 8.64847 10.7757 8.70649 10.8927 8.81545C11.0097 8.92442 11.0786 9.07542 11.0843 9.23522L11.3856 17.6705C11.3885 17.7497 11.3757 17.8286 11.348 17.9028C11.3204 17.977 11.2784 18.045 11.2244 18.103C11.1704 18.1609 11.1056 18.2077 11.0335 18.2405C10.9615 18.2734 10.8837 18.2917 10.8045 18.2945ZM13.7957 17.692C13.7957 17.8518 13.7322 18.005 13.6192 18.118C13.5062 18.231 13.353 18.2945 13.1932 18.2945C13.0334 18.2945 12.8801 18.231 12.7671 18.118C12.6541 18.005 12.5906 17.8518 12.5906 17.692V9.25668C12.5906 9.09688 12.6541 8.94363 12.7671 8.83063C12.8801 8.71764 13.0334 8.65416 13.1932 8.65416C13.353 8.65416 13.5062 8.71764 13.6192 8.83063C13.7322 8.94363 13.7957 9.09688 13.7957 9.25668V17.692ZM16.2058 17.7135C16.2002 17.8695 16.1343 18.0173 16.0219 18.1257C15.9095 18.2341 15.7594 18.2946 15.6032 18.2945H15.5814C15.5023 18.2917 15.4245 18.2733 15.3525 18.2404C15.2805 18.2075 15.2157 18.1608 15.1618 18.1028C15.1078 18.0449 15.0659 17.9769 15.0382 17.9027C15.0106 17.8285 14.9978 17.7496 15.0007 17.6705L15.302 9.23522C15.3048 9.15609 15.3232 9.0783 15.3561 9.00627C15.3889 8.93425 15.4357 8.86941 15.4936 8.81545C15.5516 8.7615 15.6196 8.71948 15.6938 8.69181C15.7679 8.66413 15.8468 8.65134 15.926 8.65416C16.0051 8.65698 16.0829 8.67535 16.1549 8.70824C16.2269 8.74112 16.2918 8.78787 16.3457 8.84581C16.3997 8.90375 16.4417 8.97176 16.4694 9.04594C16.497 9.12012 16.5098 9.19902 16.507 9.27815L16.2058 17.7135Z"
-                                          fill="#545A5F"
-                                        />
-                                      </svg>
-
-                                      <ChevronUpIcon
-                                        className={`${
-                                          open ? 'rotate-180 transform' : ''
-                                        } h-5 w-5 text-purple-500`}
+                              <div className="flex w-full    flex-row gap-8 items-start justify-center self-stretch shrink-0 relative">
+                                <div className=" relative pt-6 pb-6 pl-8">
+                                  <div className="flex flex-col gap-[6.67px] items-center justify-center shrink-0 w-6 h-6">
+                                    <svg
+                                      className="flex flex-col gap-1 items-start justify-start shrink-0 relative overflow-visible"
+                                      style={{}}
+                                      width="14"
+                                      height="9"
+                                      viewBox="0 0 14 9"
+                                      fill="none"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <line
+                                        x1="0.333984"
+                                        y1="-0.51237"
+                                        x2="13.6673"
+                                        y2="-0.51237"
+                                        stroke="#858E93"
+                                        strokeWidth="1.33333"
                                       />
-                                    </div>
+                                      <line
+                                        x1="0.333984"
+                                        y1="3.48763"
+                                        x2="13.6673"
+                                        y2="3.48763"
+                                        stroke="#858E93"
+                                        strokeWidth="1.33333"
+                                      />
+                                      <line
+                                        x1="0.333984"
+                                        y1="7.48763"
+                                        x2="13.6673"
+                                        y2="7.48763"
+                                        stroke="#858E93"
+                                        strokeWidth="1.33333"
+                                      />
+                                    </svg>
                                   </div>
                                 </div>
-                              </Disclosure.Button>
+                                <Disclosure.Button className="w-full pt-6 pr-8 pb-6">
+                                  <div className="flex flex-col gap-8 items-start justify-start flex-1 relative">
+                                    <div className="flex flex-row items-center justify-between self-stretch shrink-0 relative">
+                                      <div className="flex flex-row gap-4 items-center justify-start shrink-0 relative">
+                                        {!spindle.isEdit ? (
+                                          <div
+                                            className="text-[#000000] text-left relative"
+                                            style={{
+                                              font: "var(--headline-3-bold, 700 16px/24px 'Mulish', sans-serif)",
+                                            }}
+                                          >
+                                            {spindle.name}{' '}
+                                          </div>
+                                        ) : (
+                                          <input
+                                            className="text-[#292c2e] text-left relative outline-none w-24 border-b-2 py-1"
+                                            disabled={!spindle.isEdit}
+                                            style={{
+                                              font: "var(--headline-3-bold, 700 16px/24px 'Mulish', sans-serif)",
+                                            }}
+                                            value={spindle.name}
+                                            onClick={(event) => {
+                                              event.stopPropagation();
+                                            }}
+                                            onChange={(event) => {
+                                              console.log(event.target.value);
+                                            }}
+                                          />
+                                        )}
+                                        {!spindle.isEdit ? (
+                                          <div
+                                            className="flex flex-col gap-[4.05px] items-center justify-center shrink-0 w-[22px] h-[22px] relative cursor-pointer"
+                                            onClick={(event) => {
+                                              event.stopPropagation();
+                                              editRow(spindle);
+                                            }}
+                                          >
+                                            <div className="flex flex-col gap-[2.75px] items-center justify-center shrink-0 relative">
+                                              <div className="shrink-0 w-[13.05px] h-[12.83px] static ">
+                                                <svg
+                                                  className="absolute left-[1.73px] top-0 overflow-visible"
+                                                  style={{}}
+                                                  width="14"
+                                                  height="14"
+                                                  viewBox="0 0 14 14"
+                                                  fill="none"
+                                                  xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                  <path
+                                                    d="M9.26621 3.22754L0.734065 11.7767L0.476562 13.3109L2.00674 12.9971L10.5599 4.46897L9.26621 3.22754Z"
+                                                    fill="#AECAF4"
+                                                    stroke="#AECAF4"
+                                                    strokeWidth="1.37499"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                  />
+                                                  <path
+                                                    d="M11.8677 0.754152L11.1934 1.42791L12.5718 2.8063L13.2461 2.13197C13.423 1.95491 13.5224 1.71483 13.5224 1.46451C13.5224 1.21419 13.423 0.974116 13.2461 0.797048L13.2032 0.754152C13.1155 0.666456 13.0114 0.596891 12.8968 0.549429C12.7822 0.501968 12.6594 0.477539 12.5354 0.477539C12.4114 0.477539 12.2886 0.501968 12.174 0.549429C12.0595 0.596891 11.9554 0.666456 11.8677 0.754152Z"
+                                                    stroke="#AECAF4"
+                                                    strokeWidth="1.83333"
+                                                    strokeLinecap="round"
+                                                    strokeLinejoin="round"
+                                                  />
+                                                </svg>
+                                              </div>
+                                              <div className="border-solid border-[#aecaf4] border-t-[1.74px] border-r-[0] border-b-[0] border-l-[0] shrink-0 w-[16.5px] h-0 relative"></div>
+                                            </div>
+                                          </div>
+                                        ) : (
+                                          <div
+                                            className="flex flex-col gap-[4.05px] items-center justify-center shrink-0 w-[22px] h-[22px] relative cursor-pointer"
+                                            onClick={(event) => {
+                                              event.stopPropagation();
+                                              saveRow(spindle);
+                                            }}
+                                          >
+                                            <div className="flex flex-col gap-[2.75px] items-center justify-center shrink-0 relative">
+                                              <div className="shrink-0 w-[15.05px] h-[12.83px] static">
+                                                <svg
+                                                  className="flex flex-col gap-[4.05px] items-center justify-center shrink-0 relative overflow-visible  mb-1"
+                                                  style={{}}
+                                                  width="22"
+                                                  height="23"
+                                                  viewBox="0 0 22 23"
+                                                  fill="none"
+                                                  xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                  <path
+                                                    d="M2 9.82841L8.87322 17.3086L20 5.30859"
+                                                    stroke="#AECAF4"
+                                                    strokeWidth="2.3"
+                                                  />
+                                                </svg>
+                                              </div>
+                                              {/* <div className="border-solid border-[#aecaf4] border-t-[1.74px] border-r-[0] border-b-[0] border-l-[0] shrink-0 w-[16.5px] h-0 relative"></div> */}
+                                            </div>
+                                          </div>
+                                        )}
+                                      </div>
+                                      <div className="flex flex-row gap-8 items-center justify-start shrink-0 relative">
+                                        <svg
+                                          className="flex flex-col gap-1 items-center justify-center shrink-0 relative overflow-visible cursor-pointer"
+                                          style={{}}
+                                          width="26"
+                                          height="25"
+                                          viewBox="0 0 26 25"
+                                          fill="none"
+                                          xmlns="http://www.w3.org/2000/svg"
+                                        >
+                                          <path
+                                            d="M19.8209 6.24407H16.2058V5.34029C16.2058 4.94079 16.0471 4.55766 15.7646 4.27517C15.4821 3.99268 15.099 3.83398 14.6995 3.83398H11.6868C11.2874 3.83398 10.9042 3.99268 10.6217 4.27517C10.3392 4.55766 10.1805 4.94079 10.1805 5.34029V6.24407H6.56541C6.40561 6.24407 6.25236 6.30755 6.13937 6.42055C6.02637 6.53354 5.96289 6.68679 5.96289 6.84659C5.96289 7.00639 6.02637 7.15965 6.13937 7.27264C6.25236 7.38564 6.40561 7.44911 6.56541 7.44911H7.20559L7.92109 18.9317C7.97456 19.9428 8.74955 20.7046 9.72865 20.7046H16.6577C17.6416 20.7046 18.4012 19.9597 18.4652 18.9347L19.1807 7.44911H19.8209C19.9807 7.44911 20.1339 7.38564 20.2469 7.27264C20.3599 7.15965 20.4234 7.00639 20.4234 6.84659C20.4234 6.68679 20.3599 6.53354 20.2469 6.42055C20.1339 6.30755 19.9807 6.24407 19.8209 6.24407ZM10.8045 18.2945H10.7831C10.6269 18.2946 10.4768 18.2341 10.3644 18.1257C10.252 18.0173 10.1861 17.8695 10.1805 17.7135L9.87928 9.27815C9.87359 9.11835 9.93161 8.96283 10.0406 8.84581C10.1495 8.72879 10.3005 8.65985 10.4603 8.65416C10.6201 8.64847 10.7757 8.70649 10.8927 8.81545C11.0097 8.92442 11.0786 9.07542 11.0843 9.23522L11.3856 17.6705C11.3885 17.7497 11.3757 17.8286 11.348 17.9028C11.3204 17.977 11.2784 18.045 11.2244 18.103C11.1704 18.1609 11.1056 18.2077 11.0335 18.2405C10.9615 18.2734 10.8837 18.2917 10.8045 18.2945ZM13.7957 17.692C13.7957 17.8518 13.7322 18.005 13.6192 18.118C13.5062 18.231 13.353 18.2945 13.1932 18.2945C13.0334 18.2945 12.8801 18.231 12.7671 18.118C12.6541 18.005 12.5906 17.8518 12.5906 17.692V9.25668C12.5906 9.09688 12.6541 8.94363 12.7671 8.83063C12.8801 8.71764 13.0334 8.65416 13.1932 8.65416C13.353 8.65416 13.5062 8.71764 13.6192 8.83063C13.7322 8.94363 13.7957 9.09688 13.7957 9.25668V17.692ZM16.2058 17.7135C16.2002 17.8695 16.1343 18.0173 16.0219 18.1257C15.9095 18.2341 15.7594 18.2946 15.6032 18.2945H15.5814C15.5023 18.2917 15.4245 18.2733 15.3525 18.2404C15.2805 18.2075 15.2157 18.1608 15.1618 18.1028C15.1078 18.0449 15.0659 17.9769 15.0382 17.9027C15.0106 17.8285 14.9978 17.7496 15.0007 17.6705L15.302 9.23522C15.3048 9.15609 15.3232 9.0783 15.3561 9.00627C15.3889 8.93425 15.4357 8.86941 15.4936 8.81545C15.5516 8.7615 15.6196 8.71948 15.6938 8.69181C15.7679 8.66413 15.8468 8.65134 15.926 8.65416C16.0051 8.65698 16.0829 8.67535 16.1549 8.70824C16.2269 8.74112 16.2918 8.78787 16.3457 8.84581C16.3997 8.90375 16.4417 8.97176 16.4694 9.04594C16.497 9.12012 16.5098 9.19902 16.507 9.27815L16.2058 17.7135Z"
+                                            fill="#545A5F"
+                                          />
+                                        </svg>
+
+                                        <ChevronUpIcon
+                                          className={`${
+                                            !open ? 'rotate-180 transform' : ''
+                                          } h-5 w-5 text-purple-500`}
+                                        />
+                                      </div>
+                                    </div>
+                                  </div>
+                                </Disclosure.Button>
+                              </div>
                               <Disclosure.Panel className="px-4 pt-4 pb-2 w-full text-sm text-gray-500">
                                 <div className="p-4 flex flex-col gap-10 items-start justify-start self-stretch shrink-0 relative">
                                   <div className="flex flex-col gap-8 items-start justify-start shrink-0 relative">
@@ -250,6 +331,7 @@ function SpindleListing() {
                                         >
                                           Private Key{' '}
                                         </div>
+
                                         <div
                                           className="text-[#292c2e] text-left relative"
                                           style={{
@@ -261,7 +343,7 @@ function SpindleListing() {
                                       </div>
                                     </div>
                                   </div>
-                                  <div className="flex flex-wrap items-start justify-between self-stretch shrink-0 relative">
+                                  <div className="flex flex-wrap items-start gap-5 justify-between self-stretch shrink-0 relative">
                                     <div className="flex flex-col gap-1 items-start justify-start shrink-0 relative">
                                       <div
                                         className="text-[#858e93] text-left relative"

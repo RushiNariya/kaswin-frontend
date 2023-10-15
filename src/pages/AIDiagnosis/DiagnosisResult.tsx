@@ -13,7 +13,7 @@ function DiagnosisResult() {
       </h3>
       <div>
         <div className="relative rounded-xl overflow-auto flex-auto px-0 pt-0">
-          <div className="my-8">
+          <div className="my-4">
             <table className="border-collapse table-auto w-full text-sm items-center  mb-0 align-top  text-slate-500">
               <thead className="align-bottom sticky">
                 <tr className="h-[55px]">

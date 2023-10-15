@@ -1,9 +1,39 @@
 import React from 'react';
 
-import SensorImages from '../../assets/images/sensor_image.png';
+import SensorImages from '../../assets/images/sensor_images.png';
 
 function SpindleDetail() {
   const [selectedSpindle, setSelectedSpindle] = React.useState(0);
+
+  const [spindleData, setSpindleData] = React.useState<any>(null);
+
+  React.useEffect(() => {
+    if (selectedSpindle === 0) {
+      setSpindleData({
+        name: 'Spindle 1',
+        avgTemperature: '550 °C',
+        avgVibration: '8.34 mm/s',
+      });
+    } else if (selectedSpindle === 1) {
+      setSpindleData({
+        name: 'Spindle 2',
+        avgTemperature: '320 °C',
+        avgVibration: '9.15 mm/s',
+      });
+    } else if (selectedSpindle === 2) {
+      setSpindleData({
+        name: 'Spindle 3',
+        avgTemperature: '500 °C',
+        avgVibration: '8.10 mm/s',
+      });
+    } else if (selectedSpindle === 3) {
+      setSpindleData({
+        name: 'Spindle 4',
+        avgTemperature: '610 °C',
+        avgVibration: '9.86 mm/s',
+      });
+    }
+  }, [selectedSpindle]);
 
   return (
     <div className="flex flex-col gap-8 items-start justify-start relative">
@@ -126,7 +156,7 @@ function SpindleDetail() {
             //   font: "var(--headline-1-extrabold, 800 24px/32px 'Mulish', sans-serif)",
             // }}
           >
-            Spindle 1{' '}
+            {spindleData?.name}{' '}
           </div>
           <div className="flex flex-row gap-2 items-start justify-start shrink-0 h-[60px] relative">
             <div className="flex flex-col gap-2 items-end justify-start shrink-0 relative">
@@ -154,7 +184,7 @@ function SpindleDetail() {
                 //   font: "var(--headline-3-extrabold, 800 16px/24px 'Mulish', sans-serif)",
                 // }}
               >
-                550 °C{' '}
+                {spindleData?.avgTemperature}{' '}
               </div>
               <div
                 className="text-[#4d78cb] text-left relative flex items-center justify-start font-[800] text-[16px] leading-[24px] hd:text-[20px]"
@@ -162,13 +192,13 @@ function SpindleDetail() {
                 //   font: "var(--headline-3-extrabold, 800 16px/24px 'Mulish', sans-serif)",
                 // }}
               >
-                8.34 mm/s{' '}
+                {spindleData?.avgVibration}{' '}
               </div>
             </div>
           </div>
         </div>
         <img
-          className="w-[98%] h-[60%] relative bg-transparent"
+          className="w-[98%] h-[60%] relative bg-transparent mt-3"
           src={SensorImages}
           alt="sensor_image"
         />

@@ -108,8 +108,8 @@ const SidebarItems = ({ item }: { item: routeType | routeTypeChildren }) => {
               <Icon
                 icon={item.icon}
                 className="mr-2 mb-1 inline-block"
-                height={25}
-                width={25}
+                height={23}
+                width={23}
               />
             )}
             <span className={isOpen ? 'inline-block mt-4 font-bold' : 'hidden'}>
@@ -120,7 +120,7 @@ const SidebarItems = ({ item }: { item: routeType | routeTypeChildren }) => {
             <div className="bg-primary w-1 py-[20px] h-[100%] rounded-3xl"></div>
           ) : null}
         </div>
-        {item.path.includes('diagnosis') ? <hr className="mt-2 mx-[1rem]" /> : null}
+        {item.path.includes('diagnosis') ? <hr className="mt-2 mb-1 mx-[1rem]" /> : null}
       </>
     );
   }

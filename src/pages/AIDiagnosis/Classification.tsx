@@ -6,7 +6,7 @@ function Classification() {
   const [selectedClassification, setSelectedClassification] = React.useState(0);
 
   return (
-    <>
+    <div className="flex flex-col">
       <div className="rounded-[8px] pr-2 pl-2 flex flex-row gap-0 justify-center shrink-0 relative">
         <div className="rounded-[8px] pt-1 pb-1 flex flex-row gap-4 items-center justify-end shrink-0 relative overflow-hidden">
           <div
@@ -59,10 +59,10 @@ function Classification() {
           </div>
         </div>
       </div>
-      <div className="mt-20 h-[90%]">
+      <div className=" mt-20 h-[90%]">
         <ClassificationChart />
       </div>
-    </>
+    </div>
   );
 }
 

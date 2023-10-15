@@ -53,7 +53,7 @@ const Sidebar = (props: { routes: (routeType | routeTypeChildren)[] }) => {
                   color="#b4b7bd"
                   width="32"
                   height="32"
-                  className="px-1 mt-1"
+                  className="px-1 ml-1"
                   style={{ cursor: 'pointer' }}
                   onClick={() => setIsOpen(!isOpen)}
                 />

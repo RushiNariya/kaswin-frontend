@@ -94,7 +94,7 @@ function MonthEChart() {
       legend: {
         // backgroundColor: '#ccc',
         textStyle: {
-          fontSize: '1rem',
+          fontSize: '0.9rem',
         },
         icon: 'circle',
         orient: 'horizontal',
@@ -105,7 +105,7 @@ function MonthEChart() {
       //   enabled: false,
       // },
       grid: {
-        top: 80,
+        top: 100,
       },
       xAxis: {
         type: 'category',
@@ -156,7 +156,7 @@ function MonthEChart() {
       <ReactECharts
         option={(config as any).options}
         style={{
-          height: '400px',
+          height: '450px',
           overflow: 'scroll',
           backgroundColor: '#F1F1F1',
           borderRadius: '10px',

@@ -90,9 +90,14 @@ function ChangePasswordModal({ handleClose, open }: ChangePasswordModalProps) {
               leaveFrom="opacity-100 scale-100"
               leaveTo="opacity-0 scale-95"
             >
-              <Dialog.Panel className="w-full max-w-xl transform overflow-hidden rounded-2xl bg-white p-16 text-left align-middle shadow-xl transition-all">
-                <Dialog.Title as="div" className="">
-                  <div className="flex justify-end">
+              <Dialog.Panel className="w-full max-w-xl transform overflow-hidden rounded-2xl bg-white p-10 text-left align-middle shadow-xl transition-all">
+                <Dialog.Title as="div" className="mb-7">
+                  <div className="flex justify-between">
+                    <div className="">
+                      <span className="text-lg leading-6 text-gray-900 font-[800]">
+                        Change Password
+                      </span>
+                    </div>
                     <svg
                       className="p-2.5 flex flex-row gap-2.5 items-center justify-center shrink-0 relative overflow-visible cursor-pointer"
                       style={{}}
@@ -110,12 +115,6 @@ function ChangePasswordModal({ handleClose, open }: ChangePasswordModalProps) {
                         strokeLinecap="round"
                       />
                     </svg>
-                  </div>
-
-                  <div className="mt-7 mb-7">
-                    <span className="text-lg font-medium leading-6 text-gray-900">
-                      Change Password
-                    </span>
                   </div>
                 </Dialog.Title>
                 <div className="mt-2">
@@ -252,7 +251,7 @@ function ChangePasswordModal({ handleClose, open }: ChangePasswordModalProps) {
 
                     <button
                       type="submit"
-                      className="bg-[#426ab9] rounded-[8px] border-solid border-[transparent] border pt-[11px] pr-4 pb-[11px] pl-4 flex flex-row gap-1 items-center justify-center self-stretch shrink-0 relative w-full text-[#ffffff] text-center mt-14"
+                      className="bg-[#426ab9] rounded-[8px] border-solid border-[transparent] border pt-[11px] pr-4 pb-[11px] pl-4 flex flex-row gap-1 items-center justify-center self-stretch shrink-0 relative w-full text-[#ffffff] text-center mt-8"
                       style={{ boxShadow: '0px 0px 0px 0px rgba(66, 106, 185, 0.30)' }}
                     >
                       Change Password

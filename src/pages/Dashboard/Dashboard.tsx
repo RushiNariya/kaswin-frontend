@@ -17,6 +17,7 @@ function Dashboard() {
   const [pageCount, setPageCount] = React.useState<number>(31);
   const [selectedDate, setSelectedDate] = React.useState<string | null>(null);
   const [open, setOpen] = useState(false);
+  const [errorWindow, setErrorWindow] = useState(false);
 
   const [value, setValue] = React.useState({
     startDate: null,
@@ -463,7 +464,7 @@ function Dashboard() {
                 Error window{' '}
               </div>
               <div className="bg-[#ffffff] rounded-[5px] pt-1.5 pr-3 pb-1.5 pl-3 flex flex-row gap-2 items-center justify-start shrink-0 relative overflow-hidden">
-                <div className="flex flex-row gap-8 items-center justify-start shrink-0 w-[120px] relative overflow-hidden">
+                <div className="flex flex-row gap-8 items-center justify-start shrink-0  relative overflow-hidden">
                   <div
                     className="text-[#292c2e] text-left relative"
                     style={{
@@ -473,30 +474,81 @@ function Dashboard() {
                     Total Failures : 20{' '}
                   </div>
                 </div>
-                <svg
-                  className="pt-[5px] pr-2 pb-[5px] pl-2 flex flex-col gap-[5px] items-start justify-center shrink-0 relative overflow-visible"
-                  style={{ transform: 'translate(0px, -26px)' }}
-                  width="25"
-                  height="27"
-                  viewBox="0 0 25 27"
-                  fill="none"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path
-                    d="M10 18.5L5 13.5L10 8.5"
-                    stroke="#AECAF4"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                  <path
-                    d="M15 18.5L20 13.5L15 8.5"
-                    stroke="#AECAF4"
-                    strokeWidth="1.5"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                  />
-                </svg>
+                {errorWindow ? (
+                  <>
+                    <div className="flex flex-row gap-8 items-center justify-start shrink-0  relative overflow-hidden">
+                      <div
+                        className="text-[#292c2e] text-left relative"
+                        style={{
+                          font: "var(--headline-4-bold, 700 14px/22px 'Mulish', sans-serif)",
+                        }}
+                      >
+                        Temperature : 10{' '}
+                      </div>
+                    </div>
+                    <div className="flex flex-row gap-8 items-center justify-start shrink-0  relative overflow-hidden">
+                      <div
+                        className="text-[#292c2e] text-left relative"
+                        style={{
+                          font: "var(--headline-4-bold, 700 14px/22px 'Mulish', sans-serif)",
+                        }}
+                      >
+                        Vibration : 10{' '}
+                      </div>
+                    </div>
+                    <svg
+                      className="pt-[5px] pr-2 pb-[5px] pl-2 flex flex-col gap-0 items-start justify-center shrink-0 relative overflow-visible cursor-pointer"
+                      // style={{ transform: 'translate(0px, -26px)' }}
+                      width="40"
+                      height="40"
+                      viewBox="0 0 20 26"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      onClick={() => setErrorWindow(false)}
+                    >
+                      <path
+                        d="M5 18L10 13L5 8"
+                        stroke="#AECAF4"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                      <path
+                        d="M15 18L10 13L15 8"
+                        stroke="#AECAF4"
+                        strokeWidth="1.5"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </>
+                ) : (
+                  <svg
+                    className="pt-[5px] pr-2 pb-[5px] pl-2 flex flex-col gap-[5px] items-start justify-center shrink-0 relative overflow-visible cursor-pointer"
+                    // style={{ transform: 'translate(0px, -26px)' }}
+                    width="40"
+                    height="40"
+                    viewBox="0 0 25 27"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    onClick={() => setErrorWindow(true)}
+                  >
+                    <path
+                      d="M10 18.5L5 13.5L10 8.5"
+                      stroke="#AECAF4"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M15 18.5L20 13.5L15 8.5"
+                      stroke="#AECAF4"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                )}
               </div>
             </div>
             <div

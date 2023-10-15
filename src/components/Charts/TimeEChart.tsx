@@ -139,7 +139,7 @@ function TimeEChart() {
       legend: {
         // backgroundColor: '#ccc',
         textStyle: {
-          fontSize: '1rem',
+          fontSize: '0.9rem',
         },
         icon: 'circle',
         orient: 'horizontal',
@@ -161,7 +161,7 @@ function TimeEChart() {
         },
       },
       grid: {
-        top: 80,
+        top: 100,
       },
       series: [
         {
@@ -280,7 +280,7 @@ function TimeEChart() {
         option={(config as any).options}
         // className="w-[900px] ml-[-30px] overflow-scroll"
         style={{
-          height: '400px',
+          height: '450px',
           overflow: 'scroll',
           backgroundColor: '#F1F1F1',
           borderRadius: '10px',

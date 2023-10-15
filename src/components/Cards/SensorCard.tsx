@@ -63,10 +63,12 @@ function SensorCard({
             <span className="text-[0.7rem] flex justify-start">SIGNAL STRENGTH</span>
           </div>
           <div className="flex justify-between items-center">
-            <div className="flex">
+            <div className="flex items-center">
               <span className="font-bold">{data.strength}</span>
               {signalStrenght(data.strength)}
-              <span className="text-[12px] mr-1"> . {data.value} </span>
+
+              <Icon icon="mdi:dot" className="-ml-2" width={20} height={20} />
+              <span className="text-[12px] mr-1 font-bold">{data.value} </span>
               <Icon icon="tabler:transfer-vertical" width={17} height={17} />
             </div>
             <div className="">

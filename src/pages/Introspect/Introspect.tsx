@@ -16,6 +16,7 @@ import TimeDomainChart from '../../components/Charts/TimeDomainChart';
 import TimeEChart from '../../components/Charts/TimeEChart';
 import PageLayout from '../../components/PageLayout/PageLayout';
 import TimeChartDropDown from '../../components/TImeChartDropDown';
+import { selectCurrentSpindle } from '../../redux/common/selectors';
 import { fetchIntrospectByIdSuccess } from '../../redux/introspects/action';
 import { selectIntrospectList } from '../../redux/introspects/selectors';
 // import introspectList from '../../data/introspectData';
@@ -33,9 +34,13 @@ function Introspect() {
     selectedIntrospect,
   } = useSelector(selectIntrospectList);
 
+  const selectedSpindle = useSelector(selectCurrentSpindle);
+
   const selectIntrospectHandler = (sensor: IntrospectListType) => {
     dispatch(fetchIntrospectByIdSuccess(sensor));
   };
+
+  console.log(selectedIntrospect);
 
   return (
     <PageLayout pageTitle="Introspect">
@@ -64,8 +69,12 @@ function Introspect() {
                   <div className="flex-1">
                     <div className="flex justify-between h-full">
                       <div>
-                        <span className="text-[12px] text-gray-500">Sensor name</span>
-                        <h3 className="mt-2 text-[1.3rem] font-extrabold">Sensor 1</h3>
+                        <span className="text-[12px] font-semibold text-gray-600">
+                          Sensor name
+                        </span>
+                        <h3 className="mt-2 text-[1.3rem] font-extrabold">
+                          {selectedIntrospect.name}
+                        </h3>
                       </div>
                       <div className="h-full border-l-[1px] mr-8 border-[#AECAF4] w-[2px]"></div>
                     </div>
@@ -73,15 +82,23 @@ function Introspect() {
                   <div className="flex-1">
                     <div className="flex justify-between h-full">
                       <div>
-                        <span className="text-[12px] text-gray-500">Sensor id</span>
-                        <h3 className="mt-2 text-[1.3rem] font-extrabold">SNS1234</h3>
+                        <span className="text-[12px] font-semibold text-gray-600">
+                          Sensor id
+                        </span>
+                        <h3 className="mt-2 text-[1.3rem] font-extrabold">
+                          {selectedIntrospect.sensorId}{' '}
+                        </h3>
                       </div>
                       <div className="h-full border-l-[1px] mr-8 border-[#AECAF4] w-[2px]"></div>
                     </div>
                   </div>
                   <div className="flex-1">
-                    <span className="text-[12px] text-gray-500">Spindle system</span>
-                    <h3 className="mt-2 text-[1.3rem] font-extrabold">2</h3>
+                    <span className="text-[12px] font-semibold text-gray-600">
+                      Spindle system
+                    </span>
+                    <h3 className="mt-2 text-[1.3rem] font-extrabold">
+                      {selectedIntrospect?.id}
+                    </h3>
                   </div>
                 </div>
                 <div className="flex mt-10 gap-x-10">
@@ -90,24 +107,30 @@ function Introspect() {
                     <span className="font-bold">f5f5f013dd0e</span>
                   </div>
                   <div className="group relative flex gap-x-2 text-primary">
-                    System Info <Icon icon="bi:exclamation-circle" />
+                    <span>System Info</span>{' '}
+                    <Icon icon="bi:exclamation-circle" width={18} height={18} />
                     <div
-                      className={`absolute invisible top-7 left-20 group-hover:visible min-w-[300px] max-w-[1000px] z-50 whitespace-break-spaces bg-gray-700 text-white px-4 mb-3 py-1 text-sm rounded-md`}
+                      className={`absolute invisible top-7 left-20 group-hover:visible min-w-[320px] max-w-[1000px] z-50 whitespace-break-spaces bg-[#292C2E] text-white px-4 mb-3 py-1 text-sm rounded-md`}
                     >
                       <div className="p-2">
-                        <p className=" leading-2 text-white text-[1.2rem] mb-2">
+                        <p className=" leading-2 text-white text-[1.1rem] font-bold mb-2">
                           System Info
                         </p>
-                        <div>
-                          <div className="mb-1 font-medium">
-                            <span>Machine Type</span> <span>: Electronic microscope</span>
-                          </div>
-                          <div className="mb-1 font-medium">
-                            <span>Machine name</span> <span>: Stevens MEMS Lab</span>
-                          </div>
-                          <div className="mb-1 font-medium">
-                            <span>Machine Specific</span> <span>: Vacuum Pump</span>
-                          </div>
+                        <div className="mb-2">
+                          <table className="leading-[1.5rem]">
+                            <tr className="pb-2">
+                              <td>Machine Type</td>
+                              <td> : Electronic microscope</td>
+                            </tr>
+                            <tr className="pb-2">
+                              <td>Machine name</td>
+                              <td> : Stevens MEMS Lab</td>
+                            </tr>
+                            <tr className="pb-2">
+                              <td>Machine Specific</td>
+                              <td> : Vacuum Pump</td>
+                            </tr>
+                          </table>
                         </div>
                       </div>
                     </div>
@@ -123,31 +146,38 @@ function Introspect() {
                     <span>Version : </span> <span className="font-bold">V2.05</span>
                   </div>
                 </div>
-                <div>
-                  <h4 className="font-bold mt-10">FFT Info</h4>
-                </div>
-                <div className="flex mt-2 gap-x-10">
-                  <div>
-                    <span>Windowing : : </span> <span className="font-bold">Hanning</span>
-                  </div>
-                </div>
-                <div className="flex mt-2 gap-x-10">
-                  <div>
-                    <span>Sampling rate[Hz] : : </span>{' '}
-                    <span className="font-bold">12800</span>
-                  </div>
-                </div>
-                <div className="flex mt-2 gap-x-10">
-                  <div>
-                    <span>Sampling Count : : </span>{' '}
-                    <span className="font-bold">8192</span>
-                  </div>
-                </div>
-                <div className="flex mt-2 gap-x-10">
-                  <div>
-                    <span>Averaging : : </span> <span className="font-bold">0</span>
-                  </div>
-                </div>
+
+                {selectedIntrospect?.sensorType === 'V sensor' ? null : (
+                  <>
+                    <div>
+                      <h4 className="font-bold mt-10">FFT Info</h4>
+                    </div>
+                    <div className="flex mt-2 gap-x-10">
+                      <div>
+                        <span>Windowing : : </span>{' '}
+                        <span className="font-bold">Hanning</span>
+                      </div>
+                    </div>
+                    <div className="flex mt-2 gap-x-10">
+                      <div>
+                        <span>Sampling rate[Hz] : : </span>{' '}
+                        <span className="font-bold">12800</span>
+                      </div>
+                    </div>
+                    <div className="flex mt-2 gap-x-10">
+                      <div>
+                        <span>Sampling Count : : </span>{' '}
+                        <span className="font-bold">8192</span>
+                      </div>
+                    </div>
+                    <div className="flex mt-2 gap-x-10">
+                      <div>
+                        <span>Averaging : : </span> <span className="font-bold">0</span>
+                      </div>
+                    </div>
+                  </>
+                )}
+
                 <div className="flex justify-between w-full flex-1 mt-8 gap-x-4">
                   <div className="p-4 xl:min-w-[210px] border flex-wrap justify-center lg:flex-nowrap rounded-3xl flex items-center gap-x-6">
                     <div className="text-sm text-gray-600">

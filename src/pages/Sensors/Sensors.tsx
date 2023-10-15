@@ -81,14 +81,16 @@ function Sensors() {
                         />
 
                         <div
-                          className={`absolute invisible -top-10 left-10 group-hover:visible min-w-[150px] max-w-[1000px] z-50 whitespace-break-spaces bg-gray-700 text-white px-4 mb-3 py-1 text-sm rounded-md`}
+                          className={`absolute invisible -top-5 left-10 group-hover:visible min-w-[140px] max-w-[1000px] z-50 whitespace-break-spaces bg-[#292C2E] text-white px-4 mb-3 py-2 text-sm rounded-md`}
                         >
                           <div className="p-1">
                             <div>
                               <div className="mb-1 font-medium">
                                 <div>
-                                  Threshold Value <br />{' '}
-                                  <span className="text-[1.2rem]">300 m/s</span>
+                                  <span className="text-gray-200 mb-4 text-[0.8rem]">
+                                    Threshold Value
+                                  </span>
+                                  <br /> <span className="text-[1rem]">300 m/s</span>
                                 </div>
                               </div>
                             </div>
@@ -105,20 +107,20 @@ function Sensors() {
                   <div className="font-bold text-[1rem] text-[#292C2E] mb-4">
                     Performance report
                   </div>
-                  <div className="text-gray-600 text-sm mb-2">Date</div>
+                  <div className="text-gray-600 font-semibold text-sm mb-2">Date</div>
                   <div className="mb-6">
                     <Datepicker
                       useRange={false}
                       value={value}
                       onChange={handleValueChange}
                       displayFormat="DD-MM-YYYY"
-                      separator={'→'}
+                      separator={'  →  '}
                       inputClassName={(classes) => {
                         return classes + ' date-range';
                       }}
                     />
                   </div>
-                  <div className="flex gap-x-3 mb-10 text-[#545A5F]">
+                  <div className="flex gap-x-3 items-center mb-10 text-[#545A5F]">
                     <button className="border border-gray-500 rounded-xl p-2 px-4 mr-1">
                       <Icon icon="line-md:cloud-down" className="mr-2 inline-block" />
                       Export

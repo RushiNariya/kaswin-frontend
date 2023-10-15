@@ -37,6 +37,8 @@ export default function Example() {
 
   const isDashboardPage = pathname.includes('dashboard');
 
+  const isAIDiagnosisPage = pathname.includes('AI-diagnosis');
+
   const isBackVisible = isDashboardPage;
 
   const navigateToLoginPage = () => {
@@ -78,13 +80,14 @@ export default function Example() {
               </Disclosure.Button>
 
               <div>
-                <div>
+                <div className="flex items-center">
                   <span className="font-extrabold lg:text-[1.5rem] leading-relaxed">
-                    Kaswin Condition Monitoring .
+                    Kaswin Condition Monitoring
                   </span>
-                  <span className="lg:text-[1rem] text-[#292C2E] capitalize">
+                  <Icon icon="mdi:dot" className="-mx-2" width={30} height={30} />
+                  <span className="lg:text-[1rem] font-semibold text-[#292C2E] capitalize">
                     {' '}
-                    {selectedSpindle?.name}
+                    {!isAIDiagnosisPage ? selectedSpindle?.name : null}
                   </span>
                 </div>
                 <div>
@@ -174,7 +177,7 @@ export default function Example() {
                                   </span>
                                 </Tab>
                               </div>
-                              <div className="text-gray-400 font-normal">
+                              <div className="text-gray-500 font-normal">
                                 updated 5 min ago
                               </div>
                             </Tab.List>
@@ -331,7 +334,7 @@ export default function Example() {
                                       : 'bg-gray-200'
                                   }`}
                                 >
-                                  <div>{item.name}</div>
+                                  <div className="capitalize">{item.name}</div>
                                   {item.running ? (
                                     <div className="">
                                       <span className="rounded-2xl flex justify-between items-center p-1 bg-white px-2 text-sm text-green-600">

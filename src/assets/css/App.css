@@ -336,6 +336,7 @@ input[type='number'] {
 
 .date-range {
   background-color: #f1f1f1 !important;
+  font-weight: 700;
 }
 
 .introspect-card::before {

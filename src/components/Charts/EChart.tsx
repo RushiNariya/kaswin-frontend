@@ -296,7 +296,7 @@ function EChart() {
       legend: {
         // backgroundColor: '#ccc',
         textStyle: {
-          fontSize: '1rem',
+          fontSize: '0.9rem',
         },
         icon: 'circle',
         orient: 'horizontal',
@@ -312,7 +312,7 @@ function EChart() {
         },
       },
       grid: {
-        top: 80,
+        top: 100,
       },
       xAxis: [
         {
@@ -560,7 +560,7 @@ function EChart() {
         // opts={}
         // className="w-[1000px] h-[350px]"
         style={{
-          height: '400px',
+          height: '450px',
           overflow: 'scroll',
           backgroundColor: '#F1F1F1',
           borderRadius: '10px',

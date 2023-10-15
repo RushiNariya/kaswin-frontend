@@ -71,6 +71,19 @@ class TimeLineChart extends React.Component {
           },
         },
         colors: ['#4796C3', '#82649F'],
+        legend: {
+          position: 'bottom',
+          horizontalAlign: 'center',
+          fontSize: '12px',
+          fontWeight: 500,
+          itemMargin: {
+            horizontal: 10,
+          },
+          markers: {
+            width: 15,
+            height: 15,
+          },
+        },
         tooltip: {
           enabled: true,
           custom: function ({ series, seriesIndex, dataPointIndex, w }: any) {
@@ -167,7 +180,7 @@ class TimeLineChart extends React.Component {
           series={(this.state as any).series}
           type="rangeBar"
           height={700}
-          width="180%"
+          width="140%"
         />
       </div>
     );

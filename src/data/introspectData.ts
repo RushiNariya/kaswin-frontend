@@ -11,7 +11,7 @@ const introspectList: IntrospectListType[] = [
   {
     id: 2,
     name: 'Spindle 2',
-    sensorId: 'SNS1234',
+    sensorId: 'SNS1232',
     sensorType: 'V sensor',
 
     running: true,
@@ -19,21 +19,21 @@ const introspectList: IntrospectListType[] = [
   {
     id: 3,
     name: 'Spindle 3',
-    sensorId: 'SNS1234',
+    sensorId: 'SNS1233',
     sensorType: 'A sensor',
     running: true,
   },
   {
     id: 4,
     name: 'Spindle 4',
-    sensorId: 'SNS1234',
+    sensorId: 'SNS1230',
     sensorType: 'V sensor',
     running: false,
   },
   {
     id: 5,
     name: 'spindle 5',
-    sensorId: 'SNS1234',
+    sensorId: 'SNS1235',
     sensorType: 'A sensor',
     running: false,
   },
