@@ -97,7 +97,7 @@ class TimeSeriesChart extends React.Component {
                 <h2 style="font-weight: 700; margin-bottom: 5px;">${
                   value.series[0][value?.dataPointIndex]
                 } m/s</h2>
-                <div style="font-size: 0.7rem;">Above thresold ↑</div>
+                <div style="font-size: 0.7rem;">Above threshold <span style="font-size:1rem">↑</span></div>
               </div>`;
           },
         },

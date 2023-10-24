@@ -1,3 +1,4 @@
+import { Icon } from '@iconify/react';
 import React, { useState } from 'react';
 import Dropzone from 'react-dropzone';
 
@@ -76,56 +77,15 @@ function MyProfile() {
                 setIsEdit(!isEdit);
               }}
             >
-              <div className="flex flex-col gap-[3.58px] items-center justify-center shrink-0 w-[22px] h-[22px] relative">
+              <div className="flex flex-col gap-[3.58px] items-center justify-center shrink-0  relative">
                 <div className="flex flex-col gap-[2.43px] items-center justify-center shrink-0 relative">
-                  <div className="shrink-0 w-[11.53px] h-[11.34px] static">
+                  <div className="shrink-0  static">
                     {isEdit ? (
-                      <svg
-                        className="flex flex-col gap-[4.05px] items-center justify-center shrink-0 relative overflow-visible"
-                        style={{}}
-                        width="18"
-                        height="16"
-                        viewBox="0 0 22 23"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M2 9.82841L8.87322 17.3086L20 5.30859"
-                          stroke="#AECAF4"
-                          strokeWidth="2.3"
-                        />
-                      </svg>
+                      <Icon icon="charm:tick" width="22" height="24" color="#aecaf4" />
                     ) : (
-                      <svg
-                        className="absolute left-[1.53px] top-0 overflow-visible"
-                        style={{}}
-                        width="12"
-                        height="12"
-                        viewBox="0 0 12 12"
-                        fill="none"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
-                        <path
-                          d="M8.00299 2.54343L0.461017 10.1004L0.233398 11.4566L1.586 11.1792L9.14653 3.64079L8.00299 2.54343Z"
-                          fill="#AECAF4"
-                          stroke="#AECAF4"
-                          strokeWidth="1.21542"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                        <path
-                          d="M10.3031 0.357091L9.70703 0.952655L10.9255 2.17108L11.5215 1.57501C11.6779 1.41849 11.7658 1.20628 11.7658 0.985011C11.7658 0.763742 11.6779 0.551527 11.5215 0.395009L11.4836 0.357091C11.4061 0.279572 11.3141 0.21808 11.2128 0.176126C11.1115 0.134173 11.003 0.112579 10.8934 0.112579C10.7837 0.112579 10.6752 0.134173 10.5739 0.176126C10.4726 0.21808 10.3806 0.279572 10.3031 0.357091Z"
-                          stroke="#AECAF4"
-                          strokeWidth="1.62056"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        />
-                      </svg>
+                      <Icon icon="fe:edit" width="21" height="21" color="#aecaf4" />
                     )}
                   </div>
-                  {!isEdit ? (
-                    <div className="border-solid border-[#aecaf4] border-t-[1.54px] border-r-[0] border-b-[0] border-l-[0] shrink-0 w-[14.59px] h-0 relative"></div>
-                  ) : null}
                 </div>
               </div>
               {!isEdit ? (

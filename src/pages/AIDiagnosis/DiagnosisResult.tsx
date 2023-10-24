@@ -13,44 +13,44 @@ function DiagnosisResult() {
       </h3>
       <div>
         <div className="relative rounded-xl overflow-auto flex-auto px-0 pt-0">
-          <div className="my-4">
+          <div className="my-3">
             <table className="border-collapse table-auto w-full text-sm items-center  mb-0 align-top  text-slate-500">
               <thead className="align-bottom sticky">
                 <tr className="h-[55px]">
                   <th className="px-2 py-3 font-bold text-left  align-middle bg-transparent shadow-none text-xxs tracking-none whitespace-nowrap text-slate-950 opacity-70"></th>
                   <th
                     colSpan={2}
-                    className="px-2 py-3 font-bold text-left  align-middle bg-transparent shadow-none text-xxs tracking-none whitespace-nowrap text-slate-950 opacity-70"
+                    className="px-2 py-3 font-bold text-left  align-middle bg-transparent shadow-none text-xxs tracking-none whitespace-nowrap text-slate-950"
                   >
                     AI Diagnosis
                   </th>
                   <th
                     colSpan={4}
-                    className="px-2 py-3 font-bold text-left  align-middle bg-transparent shadow-none text-xxs tracking-none whitespace-nowrap text-slate-950 opacity-70"
+                    className="px-2 py-3 font-bold text-left  align-middle bg-transparent shadow-none text-xxs tracking-none whitespace-nowrap text-slate-950 "
                   >
                     AI Clustering
                   </th>
                 </tr>
                 <tr className="bg-slate-100">
-                  <th className="px-9 py-3 font-bold text-left  align-middle bg-transparent shadow-none text-xxs tracking-none whitespace-nowrap text-slate-950 opacity-70 rounded-l-lg">
+                  <th className="px-9 py-3 font-bold text-left  align-middle bg-transparent shadow-none text-xxs tracking-none whitespace-nowrap text-slate-950  rounded-l-lg">
                     Time
                   </th>
-                  <th className="px-2 py-3 font-bold text-left  align-middle bg-transparent shadow-none text-xxs tracking-none whitespace-nowrap text-slate-950 opacity-70">
+                  <th className="px-2 py-3 font-bold text-left  align-middle bg-transparent shadow-none text-xxs tracking-none whitespace-nowrap text-slate-950 ">
                     Value
                   </th>
-                  <th className="px-2 py-3 font-bold text-left  align-middle bg-transparent shadow-none text-xxs tracking-none whitespace-nowrap text-slate-950 opacity-70">
+                  <th className="px-2 py-3 font-bold text-left  align-middle bg-transparent shadow-none text-xxs tracking-none whitespace-nowrap text-slate-950 ">
                     Condition
                   </th>
-                  <th className="px-2 py-3 font-bold text-left  align-middle bg-transparent shadow-none text-xxs tracking-none whitespace-nowrap text-slate-950 opacity-70">
+                  <th className="px-2 py-3 font-bold text-left  align-middle bg-transparent shadow-none text-xxs tracking-none whitespace-nowrap text-slate-950 ">
                     L1
                   </th>
-                  <th className="px-2 py-3 font-bold text-left  align-middle bg-transparent shadow-none text-xxs tracking-none whitespace-nowrap text-slate-950 opacity-70">
+                  <th className="px-2 py-3 font-bold text-left  align-middle bg-transparent shadow-none text-xxs tracking-none whitespace-nowrap text-slate-950 ">
                     L2
                   </th>
-                  <th className="px-2 py-3 font-bold text-left  align-middle bg-transparent shadow-none text-xxs tracking-none whitespace-nowrap text-slate-950 opacity-70">
+                  <th className="px-2 py-3 font-bold text-left  align-middle bg-transparent shadow-none text-xxs tracking-none whitespace-nowrap text-slate-950 ">
                     L3
                   </th>
-                  <th className="px-2 py-3 font-bold text-left  align-middle bg-transparent shadow-none text-xxs tracking-none whitespace-nowrap text-slate-950 opacity-70 rounded-r-lg">
+                  <th className="px-2 py-3 font-bold text-left  align-middle bg-transparent shadow-none text-xxs tracking-none whitespace-nowrap text-slate-950  rounded-r-lg">
                     B1
                   </th>
                 </tr>

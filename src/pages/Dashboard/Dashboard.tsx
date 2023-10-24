@@ -645,7 +645,7 @@ function Dashboard() {
                 </div>
               </div>
               <div
-                className="bg-[#ffffff] rounded-[15px] pr-4 pl-4 mb-4 flex flex-col gap-2.5 items-center justify-end shrink-0 w-[80%] h-[170px] hd:h-auto relative"
+                className="bg-[#ffffff] rounded-[15px] pr-4 pl-4 mb-4 flex flex-col gap-2.5 items-center justify-end shrink-0 w-[86%] h-[170px] hd:h-auto relative"
                 style={{ overflowY: 'auto' }}
               >
                 <div className="rounded-[5px] pt-1 pb-1 flex flex-row items-center justify-between self-stretch shrink-0 relative">

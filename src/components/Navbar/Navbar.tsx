@@ -67,7 +67,7 @@ export default function Example() {
   return (
     <Disclosure as="nav" className="">
       {() => (
-        <div className="mx-auto px-2 sm:px-6 lg:px-8 mt-4">
+        <div className="mx-auto px-2 sm:px-6 lg:px-10 mt-4">
           <div className="relative flex flex-1 items-center justify-between">
             <div className="inset-y-0 left-0 flex items-center">
               <Disclosure.Button
@@ -84,7 +84,10 @@ export default function Example() {
                   <span className="font-extrabold lg:text-[1.5rem] leading-relaxed">
                     Kaswin Condition Monitoring
                   </span>
-                  <Icon icon="mdi:dot" className="-mx-2" width={30} height={30} />
+                  {!isAIDiagnosisPage ? (
+                    <Icon icon="mdi:dot" className="-mx-2" width={30} height={30} />
+                  ) : null}
+
                   <span className="lg:text-[1rem] font-semibold text-[#292C2E] capitalize">
                     {' '}
                     {!isAIDiagnosisPage ? selectedSpindle?.name : null}

@@ -1,5 +1,6 @@
 import { Disclosure } from '@headlessui/react';
 import { ChevronUpIcon } from '@heroicons/react/20/solid';
+import { Icon } from '@iconify/react';
 import { useState } from 'react';
 import { DragDropContext, Draggable, Droppable } from 'react-beautiful-dnd';
 
@@ -136,7 +137,7 @@ function SpindleListing() {
                         >
                           {({ open }) => (
                             <>
-                              <div className="flex w-full    flex-row gap-8 items-start justify-center self-stretch shrink-0 relative">
+                              <div className="flex w-full flex-row gap-8 items-start justify-center self-stretch shrink-0 relative">
                                 <div className=" relative pt-6 pb-6 pl-8">
                                   <div className="flex flex-col gap-[6.67px] items-center justify-center shrink-0 w-6 h-6">
                                     <svg
@@ -206,68 +207,40 @@ function SpindleListing() {
                                         )}
                                         {!spindle.isEdit ? (
                                           <div
-                                            className="flex flex-col gap-[4.05px] items-center justify-center shrink-0 w-[22px] h-[22px] relative cursor-pointer"
+                                            className="flex flex-col gap-[4.05px] items-center justify-center shrink-0 relative cursor-pointer"
                                             onClick={(event) => {
                                               event.stopPropagation();
                                               editRow(spindle);
                                             }}
                                           >
                                             <div className="flex flex-col gap-[2.75px] items-center justify-center shrink-0 relative">
-                                              <div className="shrink-0 w-[13.05px] h-[12.83px] static ">
-                                                <svg
-                                                  className="absolute left-[1.73px] top-0 overflow-visible"
-                                                  style={{}}
-                                                  width="14"
-                                                  height="14"
-                                                  viewBox="0 0 14 14"
-                                                  fill="none"
-                                                  xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                  <path
-                                                    d="M9.26621 3.22754L0.734065 11.7767L0.476562 13.3109L2.00674 12.9971L10.5599 4.46897L9.26621 3.22754Z"
-                                                    fill="#AECAF4"
-                                                    stroke="#AECAF4"
-                                                    strokeWidth="1.37499"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                  />
-                                                  <path
-                                                    d="M11.8677 0.754152L11.1934 1.42791L12.5718 2.8063L13.2461 2.13197C13.423 1.95491 13.5224 1.71483 13.5224 1.46451C13.5224 1.21419 13.423 0.974116 13.2461 0.797048L13.2032 0.754152C13.1155 0.666456 13.0114 0.596891 12.8968 0.549429C12.7822 0.501968 12.6594 0.477539 12.5354 0.477539C12.4114 0.477539 12.2886 0.501968 12.174 0.549429C12.0595 0.596891 11.9554 0.666456 11.8677 0.754152Z"
-                                                    stroke="#AECAF4"
-                                                    strokeWidth="1.83333"
-                                                    strokeLinecap="round"
-                                                    strokeLinejoin="round"
-                                                  />
-                                                </svg>
+                                              <div className="shrink-0 static ">
+                                                <Icon
+                                                  icon="fe:edit"
+                                                  width="23"
+                                                  height="23"
+                                                  color="#aecaf4"
+                                                />
                                               </div>
-                                              <div className="border-solid border-[#aecaf4] border-t-[1.74px] border-r-[0] border-b-[0] border-l-[0] shrink-0 w-[16.5px] h-0 relative"></div>
+                                              {/* <div className="border-solid border-[#aecaf4] border-t-[1.74px] border-r-[0] border-b-[0] border-l-[0] shrink-0 w-[16.5px] h-0 relative"></div> */}
                                             </div>
                                           </div>
                                         ) : (
                                           <div
-                                            className="flex flex-col gap-[4.05px] items-center justify-center shrink-0 w-[22px] h-[22px] relative cursor-pointer"
+                                            className="flex flex-col gap-[4.05px] items-center justify-center shrink-0 relative cursor-pointer"
                                             onClick={(event) => {
                                               event.stopPropagation();
                                               saveRow(spindle);
                                             }}
                                           >
                                             <div className="flex flex-col gap-[2.75px] items-center justify-center shrink-0 relative">
-                                              <div className="shrink-0 w-[15.05px] h-[12.83px] static">
-                                                <svg
-                                                  className="flex flex-col gap-[4.05px] items-center justify-center shrink-0 relative overflow-visible  mb-1"
-                                                  style={{}}
-                                                  width="22"
+                                              <div className="shrink-0 static">
+                                                <Icon
+                                                  icon="charm:tick"
+                                                  width="23"
                                                   height="23"
-                                                  viewBox="0 0 22 23"
-                                                  fill="none"
-                                                  xmlns="http://www.w3.org/2000/svg"
-                                                >
-                                                  <path
-                                                    d="M2 9.82841L8.87322 17.3086L20 5.30859"
-                                                    stroke="#AECAF4"
-                                                    strokeWidth="2.3"
-                                                  />
-                                                </svg>
+                                                  color="#aecaf4"
+                                                />
                                               </div>
                                               {/* <div className="border-solid border-[#aecaf4] border-t-[1.74px] border-r-[0] border-b-[0] border-l-[0] shrink-0 w-[16.5px] h-0 relative"></div> */}
                                             </div>
@@ -300,9 +273,48 @@ function SpindleListing() {
                                   </div>
                                 </Disclosure.Button>
                               </div>
-                              <Disclosure.Panel className="px-4 pt-4 pb-2 w-full text-sm text-gray-500">
-                                <div className="p-4 flex flex-col gap-10 items-start justify-start self-stretch shrink-0 relative">
-                                  <div className="flex flex-col gap-8 items-start justify-start shrink-0 relative">
+                              <Disclosure.Panel className=" text-sm text-gray-500 flex w-full flex-row gap-8 items-start justify-center self-stretch  relative">
+                                {/* <div className="flex w-full flex-row gap-8 items-start justify-center self-stretch shrink-0 relative"> */}
+                                <div className=" relative pt-6 pb-6 pl-8 invisible">
+                                  <div className="flex flex-col gap-[6.67px] items-center justify-center shrink-0 w-6 h-6">
+                                    <svg
+                                      className="flex flex-col gap-1 items-start justify-start shrink-0 relative overflow-visible"
+                                      style={{}}
+                                      width="14"
+                                      height="9"
+                                      viewBox="0 0 14 9"
+                                      fill="none"
+                                      xmlns="http://www.w3.org/2000/svg"
+                                    >
+                                      <line
+                                        x1="0.333984"
+                                        y1="-0.51237"
+                                        x2="13.6673"
+                                        y2="-0.51237"
+                                        stroke="#858E93"
+                                        strokeWidth="1.33333"
+                                      />
+                                      <line
+                                        x1="0.333984"
+                                        y1="3.48763"
+                                        x2="13.6673"
+                                        y2="3.48763"
+                                        stroke="#858E93"
+                                        strokeWidth="1.33333"
+                                      />
+                                      <line
+                                        x1="0.333984"
+                                        y1="7.48763"
+                                        x2="13.6673"
+                                        y2="7.48763"
+                                        stroke="#858E93"
+                                        strokeWidth="1.33333"
+                                      />
+                                    </svg>
+                                  </div>
+                                </div>
+                                <div className="pt-6 pr-8 pb-6 flex flex-col gap-10 items-start justify-start self-stretch  relative">
+                                  <div className="flex flex-col gap-8 items-start justify-start  relative">
                                     <div className="flex flex-row gap-[124px] items-start justify-start shrink-0 relative">
                                       <div className="flex flex-col gap-1 items-start justify-start shrink-0 relative">
                                         <div
@@ -343,7 +355,7 @@ function SpindleListing() {
                                       </div>
                                     </div>
                                   </div>
-                                  <div className="flex flex-wrap items-start gap-5 justify-between self-stretch shrink-0 relative">
+                                  <div className="flex flex-wrap items-start gap-5 justify-between self-stretch relative">
                                     <div className="flex flex-col gap-1 items-start justify-start shrink-0 relative">
                                       <div
                                         className="text-[#858e93] text-left relative"
@@ -418,6 +430,7 @@ function SpindleListing() {
                                     </div>
                                   </div>
                                 </div>
+                                {/* </div> */}
                               </Disclosure.Panel>
                             </>
                           )}

@@ -15,7 +15,7 @@ class TimeLineChart extends React.Component {
               x: 'Vibration',
               y: [
                 moment('01:54', 'HH:mm').toDate().getTime(),
-                moment('03:54', 'HH:mm').toDate().getTime(),
+                moment('04:54', 'HH:mm').toDate().getTime(),
               ],
               fillColor: '#4796C3',
             },
@@ -44,8 +44,8 @@ class TimeLineChart extends React.Component {
             {
               x: 'Temperature',
               y: [
-                moment('21:54', 'HH:mm').toDate().getTime(),
-                moment('23:54', 'HH:mm').toDate().getTime(),
+                moment('19:54', 'HH:mm').toDate().getTime(),
+                moment('22:54', 'HH:mm').toDate().getTime(),
               ],
               fillColor: '#82649F',
             },
