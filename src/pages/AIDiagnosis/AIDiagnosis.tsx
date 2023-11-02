@@ -17,7 +17,7 @@ function AIDiagnosis() {
             <Classification />
           </div>
         </div>
-        <div className="mt-5 3hd:mt-[-0%] 2hd:mt-[-0%] xl:mt-[2%] 2xl:mt-[-0%] 3ml:mt-[1%] hd:mt-[-5%]">
+        <div className="mt-5 3hd:mt-[2%] 2hd:mt-[2%] xl:mt-[4%] 2xl:mt-[3%] 3ml:mt-[3%] hd:mt-[2%]">
           <DiagnosisResult />
         </div>
       </div>
