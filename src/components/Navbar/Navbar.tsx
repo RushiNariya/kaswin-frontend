@@ -238,7 +238,7 @@ export default function Example() {
                                   </div>
                                 </div>
                               </Tab.Panel>
-                              <Tab.Panel className="w-[600px]">
+                              <Tab.Panel className="w-full sm:w-[600px] max-h-[500px] overflow-y-scroll">
                                 <div className="mt-6">
                                   <div className="flex gap-x-4 flex-col">
                                     {notifications.map((item) => {
