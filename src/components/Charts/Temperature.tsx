@@ -32,6 +32,10 @@ export class Temperature extends Component {
     super(props);
     this.state = {
       options: {
+        dataZoom: {
+          show: true,
+          realtime: true,
+        },
         tooltip: {
           trigger: 'axis',
           formatter: function (params: any) {

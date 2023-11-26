@@ -90,6 +90,9 @@ function VerifyOTP() {
             <div className="flex flex-1 flex-col items-center justify-center">
               <div className="w-full flex-1 container">
                 <div className="flex flex-col w-full items-center">
+                  <div>
+                    <img src={logo} alt="kaswin logo" />
+                  </div>
                   <h1 className="text-[1.5rem] font-bold mb-8">Verify OTP</h1>
                 </div>
 

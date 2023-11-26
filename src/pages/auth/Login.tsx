@@ -4,6 +4,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 
 import hidePassword from '../../assets/images/hide-password-icon.png';
+import logo from '../../assets/images/project_logo.png';
 import showPassword from '../../assets/images/show-password-icon.png';
 import { usePasswordShow } from '../../hooks/usePasswordShow';
 
@@ -53,6 +54,10 @@ function Login() {
   return (
     <div className="login-box">
       <div className="flex flex-col w-full items-center">
+        <div className="flex lg:hidden flex-col w-full items-center">
+          <img alt="project logo" src={logo} width="160" />
+        </div>
+
         <h1 className="text-[1.5rem] font-extrabold mb-8">Login to your Account</h1>
 
         <button className="w-full max-w-md font-bold shadow-sm rounded-lg py-3 border text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">

@@ -5,6 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import * as Yup from 'yup';
 
 import hidePassword from '../../assets/images/hide-password-icon.png';
+import logo from '../../assets/images/project_logo.png';
 import showPassword from '../../assets/images/show-password-icon.png';
 import { usePasswordShow } from '../../hooks/usePasswordShow';
 
@@ -69,6 +70,10 @@ function SignUp() {
   return (
     <div className="signup-box">
       <div className="flex flex-col w-full items-center">
+        <div className="flex lg:hidden flex-col w-full items-center">
+          <img alt="project logo" src={logo} width="160" />
+        </div>
+
         <button className="px-16 w-full max-w-md font-bold shadow-sm rounded-lg py-2 border text-gray-800 flex items-center justify-center transition-all duration-300 ease-in-out focus:outline-none hover:shadow focus:shadow-sm focus:shadow-outline">
           <div className="bg-white p-2 rounded-full">
             <svg className="w-4" viewBox="0 0 533.5 544.3">
@@ -90,7 +95,7 @@ function SignUp() {
               />
             </svg>
           </div>
-          <span className="ml-4">Continue with Google</span>
+          <span className="ml-4 whitespace-nowrap">Continue with Google</span>
         </button>
       </div>
 

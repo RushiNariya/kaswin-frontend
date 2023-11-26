@@ -67,11 +67,11 @@ export default function Example() {
   return (
     <Disclosure as="nav" className="">
       {() => (
-        <div className="mx-auto px-2 sm:px-6 lg:px-10 mt-4">
+        <div className="mx-auto md:px-2 lg:px-10 mt-4">
           <div className="relative flex flex-1 items-center justify-between">
             <div className="inset-y-0 left-0 flex items-center">
               <Disclosure.Button
-                className="inline-flex sm:hidden items-center justify-center rounded-md p-2 text-gray-400"
+                className="inline-flex md:hidden items-center justify-center rounded-md p-2 text-gray-400"
                 onClick={() => setIsOpen(!isOpen)}
               >
                 <span className="sr-only">Open main menu</span>
@@ -81,32 +81,41 @@ export default function Example() {
 
               <div>
                 <div className="flex items-center">
-                  <span className="font-extrabold lg:text-[1.5rem] leading-relaxed">
+                  <span className="font-extrabold whitespace-nowrap text-[0.9rem] lg:text-[1.5rem] leading-relaxed">
                     Kaswin Condition Monitoring
                   </span>
                   {!isAIDiagnosisPage ? (
-                    <Icon icon="mdi:dot" className="-mx-2" width={30} height={30} />
+                    <Icon
+                      icon="mdi:dot"
+                      className="hidden lg:inline -mx-2"
+                      width={30}
+                      height={30}
+                    />
                   ) : null}
 
-                  <span className="lg:text-[1rem] font-semibold text-[#292C2E] capitalize">
+                  <span className="hidden lg:inline lg:text-[1rem] font-semibold whitespace-nowrap text-[#292C2E] capitalize">
                     {' '}
                     {!isAIDiagnosisPage ? selectedSpindle?.name : null}
                   </span>
                 </div>
+                <div className=" lg:hidden lg:text-[0.8rem] font-semibold whitespace-nowrap text-[#292C2E] capitalize">
+                  {' '}
+                  {!isAIDiagnosisPage ? selectedSpindle?.name : null}
+                </div>
                 <div>
-                  <span className="text-gray-500 text-[1rem]">
+                  <span className="hidden md:inline text-gray-500 text-[0.6rem] lg:text-[1rem]">
                     Furthring your spindle condition
                   </span>
                 </div>
               </div>
             </div>
 
-            <div className="absolute inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto sm:ml-6 sm:pr-0">
+            <div className="inset-y-0 right-0 flex items-center pr-2 sm:static sm:inset-auto lg:ml-6 sm:pr-0">
               <div className="flex flex-1 items-center justify-center gap-3">
                 {isBackVisible ? (
                   <button
                     type="submit"
-                    className="tracking-wide lg:min-w-[10rem] font-semibold bg-primary text-white w-full px-2 py-2 md:py-3 rounded-lg transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
+                    className="tracking-wide hidden md:flex lg:min-w-[13.4rem] font-semibold bg-primary text-white w-full px-2 py-2 md:py-3 rounded-lg transition-all duration-300 ease-in-out items-center justify-center focus:shadow-outline focus:outline-none"
                   >
                     <Icon
                       icon="ant-design:thunderbolt-filled"
@@ -114,14 +123,14 @@ export default function Example() {
                       width={20}
                       height={20}
                     />
-                    <span className="">Upgrade to premium</span>
+                    <span className="whitespace-nowrap">Upgrade to premium</span>
                   </button>
                 ) : null}
 
-                <Menu as="div" className="">
-                  <Menu.Button className="flex rounded-full text-sm">
+                <Menu as="div" className="w-full">
+                  <Menu.Button className="flex w-full rounded-full text-sm">
                     <span className="sr-only">Open user menu</span>
-                    <div className="relative overflow-hidden flex h-12 w-12 shrink-0 select-none items-center justify-center text-sm font-bold uppercase text-gray-800">
+                    <div className="relative -mr-3 lg:mr-auto overflow-hidden flex h-12 w-12 shrink-0 select-none items-center justify-center text-sm font-bold uppercase text-gray-800">
                       <Icon icon="tabler:bell-filled" width={30} height={30} />
                       <span
                         aria-hidden="true"
@@ -138,7 +147,7 @@ export default function Example() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="absolute right-20 z-20 mt-2 w-min-[500px] origin-top-right rounded-xl bg-white py-1 shadow-xl ring-opacity-5 focus:outline-none">
+                    <Menu.Items className="absolute border-2 md:border-none right-0 sm:left-auto z-20 mt-2 sm:w-min-[500px] origin-top-right rounded-xl bg-white py-1 shadow-xl ring-opacity-5 focus:outline-none">
                       <Menu.Item>
                         <div
                           className={classNames(
@@ -185,7 +194,7 @@ export default function Example() {
                               </div>
                             </Tab.List>
                             <Tab.Panels>
-                              <Tab.Panel className="w-[600px] max-h-[500px] overflow-y-scroll">
+                              <Tab.Panel className="w-full sm:w-[600px] max-h-[500px] overflow-y-scroll">
                                 <div className="mt-6">
                                   <div className="flex gap-x-4 flex-col">
                                     {notifications.map((item) => {
@@ -195,9 +204,9 @@ export default function Example() {
                                             <div className="flex items-center">
                                               <Icon
                                                 icon="carbon:close-filled"
-                                                className="mr-2 w-5 h-5"
+                                                className="min-w-[20px] h-5"
                                               />
-                                              <span className="mr-2">
+                                              <span className="mx-2">
                                                 {item.dateTime}
                                               </span>{' '}
                                               <span className="mr-2">{item.content}</span>
@@ -210,7 +219,7 @@ export default function Example() {
                                                       item.spindleId || 1,
                                                     )
                                                   }
-                                                  className="bg-[#EFA71C] flex items-center gap-x-1 text-white p-2 rounded-md"
+                                                  className="bg-[#EFA71C] whitespace-nowrap flex items-center gap-x-1 text-white p-2 rounded-md"
                                                 >
                                                   {
                                                     spindleList.find(
@@ -239,9 +248,9 @@ export default function Example() {
                                             <div className="flex items-center">
                                               <Icon
                                                 icon="carbon:close-filled"
-                                                className="mr-2 w-5 h-5"
+                                                className="min-w-[20px] h-5"
                                               />
-                                              <span className="mr-2">
+                                              <span className="mx-2">
                                                 {item.dateTime}
                                               </span>{' '}
                                               <span className="mr-2">{item.content}</span>
@@ -254,7 +263,7 @@ export default function Example() {
                                                       item.spindleId || 1,
                                                     )
                                                   }
-                                                  className="bg-[#EFA71C] flex items-center gap-x-1 text-white p-2 rounded-md"
+                                                  className="bg-[#EFA71C] whitespace-nowrap flex items-center gap-x-1 text-white p-2 rounded-md"
                                                 >
                                                   {
                                                     spindleList.find(
@@ -306,7 +315,7 @@ export default function Example() {
                     leaveFrom="transform opacity-100 scale-100"
                     leaveTo="transform opacity-0 scale-95"
                   >
-                    <Menu.Items className="absolute right-0 z-20 mt-2 p-4 w-[300px] origin-top-right rounded-2xl bg-white shadow-lg ring-opacity-5 focus:outline-none">
+                    <Menu.Items className="absolute border-2 md:border-none right-2 md:right-0 z-20 mt-2 p-4 w-[300px] origin-top-right rounded-2xl bg-white shadow-lg ring-opacity-5 focus:outline-none">
                       <Menu.Item>
                         <>
                           <div

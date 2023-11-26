@@ -293,6 +293,10 @@ function EChart() {
       tooltip: {
         trigger: 'axis',
       },
+      dataZoom: {
+        show: true,
+        realtime: true,
+      },
       legend: {
         // backgroundColor: '#ccc',
         textStyle: {

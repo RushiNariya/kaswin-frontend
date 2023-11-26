@@ -14,6 +14,7 @@ import Spectrogram from '../../components/Charts/Spectrogram';
 import Temperature from '../../components/Charts/Temperature';
 import TimeDomainChart from '../../components/Charts/TimeDomainChart';
 import TimeEChart from '../../components/Charts/TimeEChart';
+import IntrospectDropDown from '../../components/DropDown/IntrospectDropDown';
 import PageLayout from '../../components/PageLayout/PageLayout';
 import TimeChartDropDown from '../../components/TImeChartDropDown';
 import { selectCurrentSpindle } from '../../redux/common/selectors';
@@ -47,7 +48,7 @@ function Introspect() {
       <section className="py-6 space-y-3 w-full">
         <div className="flex-1 w-full">
           <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-6 xl:grid-cols-7 w-full">
-            <div className="flex flex-wrap gap-3 lg:flex-col gap-y-4 md:col-span-2">
+            <div className="hidden md:grid md:grid-cols-2 lg:flex lg:flex-wrap gap-3 lg:flex-col gap-y-4 md:col-span-2">
               {introspectList.map((item) => {
                 return (
                   <IntrospectCard
@@ -63,6 +64,25 @@ function Introspect() {
               <IntrospectCard />
               <IntrospectCard /> */}
             </div>
+
+            <div className="w-full md:hidden">
+              <IntrospectDropDown
+                list={introspectList}
+                selected={selectedIntrospect || { id: 1, name: 'select Sensor' }}
+                setSelected={selectIntrospectHandler}
+              />
+
+              <div className="mt-4">
+                {selectedIntrospect ? (
+                  <IntrospectCard
+                    data={selectedIntrospect}
+                    selectIntrospectHandler={() => {}}
+                    selectedIntrospect={selectedIntrospect}
+                  />
+                ) : null}
+              </div>
+            </div>
+
             {selectedIntrospect ? (
               <div className="lg:col-span-4 xl:col-span-5 w-full">
                 <div className="flex justify-between w-full flex-1">
@@ -72,7 +92,7 @@ function Introspect() {
                         <span className="text-[12px] font-semibold text-gray-600">
                           Sensor name
                         </span>
-                        <h3 className="mt-2 text-[1.3rem] font-extrabold">
+                        <h3 className="mt-2 text-[1rem] md:text-[1.3rem] font-extrabold">
                           {selectedIntrospect.name}
                         </h3>
                       </div>
@@ -85,7 +105,7 @@ function Introspect() {
                         <span className="text-[12px] font-semibold text-gray-600">
                           Sensor id
                         </span>
-                        <h3 className="mt-2 text-[1.3rem] font-extrabold">
+                        <h3 className="mt-2 text-[1rem] md:text-[1.3rem] font-extrabold">
                           {selectedIntrospect.sensorId}{' '}
                         </h3>
                       </div>
@@ -96,7 +116,7 @@ function Introspect() {
                     <span className="text-[12px] font-semibold text-gray-600">
                       Spindle system
                     </span>
-                    <h3 className="mt-2 text-[1.3rem] font-extrabold">
+                    <h3 className="mt-2 text-[1rem] md:text-[1.3rem] font-extrabold">
                       {selectedIntrospect?.id}
                     </h3>
                   </div>
@@ -107,10 +127,10 @@ function Introspect() {
                     <span className="font-bold">f5f5f013dd0e</span>
                   </div>
                   <div className="group relative flex gap-x-2 text-primary">
-                    <span>System Info</span>{' '}
+                    <span className="hidden md:inline">System Info</span>{' '}
                     <Icon icon="bi:exclamation-circle" width={18} height={18} />
                     <div
-                      className={`absolute invisible top-7 left-20 group-hover:visible min-w-[320px] max-w-[1000px] z-50 whitespace-break-spaces bg-[#292C2E] text-white px-4 mb-3 py-1 text-sm rounded-md`}
+                      className={`absolute invisible -right-10 top-6 md:top-7 md:left-20 group-hover:visible min-w-[320px] max-w-[1000px] z-50 whitespace-break-spaces bg-[#292C2E] text-white px-4 mb-3 py-1 text-sm rounded-md`}
                     >
                       <div className="p-2">
                         <p className=" leading-2 text-white text-[1.1rem] font-bold mb-2">
@@ -183,7 +203,7 @@ function Introspect() {
                     <div className="text-sm text-gray-600">
                       <img src={batteryLevelIcon} alt="battery level" />
                     </div>
-                    <div className="">
+                    <div className="text-center">
                       <div className="text-[1.2rem] font-extrabold">3.65 V</div>
                       <div className="text-xs text-gray-600 mt-1">Battery Level</div>
                     </div>
@@ -192,7 +212,7 @@ function Introspect() {
                     <div className="text-sm text-gray-600">
                       <img src={dataCountIcon} alt="battery level" />
                     </div>
-                    <div className="">
+                    <div className="text-center">
                       <div className="text-[1.2rem] font-extrabold">81667</div>
                       <div className="text-xs text-gray-600 mt-1">Data Count</div>
                     </div>
@@ -201,7 +221,7 @@ function Introspect() {
                     <div className="text-sm text-gray-600">
                       <img src={sensingDurationIcon} alt="battery level" />
                     </div>
-                    <div className="">
+                    <div className="text-center">
                       <div className="text-[1.2rem] font-extrabold">1.31 sec</div>
                       <div className="text-xs text-gray-600 mt-1">Sensing duration</div>
                     </div>
@@ -212,11 +232,11 @@ function Introspect() {
                     Vibration Chart
                   </div>
                 </div>
-                <div className="w-full rounded-lg p-1">
+                <div className="w-[100%] rounded-lg p-1 overflow-x-hidden">
                   <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
                     <Tab.List
                       onClick={(e) => e.stopPropagation()}
-                      className="flex justify-center cursor-pointer w-full flex-1 overflow-scroll mb-4"
+                      className="flex md:justify-center flex-wrap md:flex-nowrap justify-around cursor-pointer w-full flex-1 mb-4"
                     >
                       <Tab as={React.Fragment}>
                         <span
@@ -262,22 +282,9 @@ function Introspect() {
                           Spectrogram
                         </span>
                       </Tab>
-                      {/* <Tab as={React.Fragment}>
-                        <span
-                          className={
-                            selectedIndex === 4
-                              ? 'px-4 py-2 ml-3 border-b-2 border-black outline-none font-bold'
-                              : 'px-4 py-2 ml-3 border-none text-gray-400 font-bold'
-                          }
-                        >
-                          All
-                        </span>
-                      </Tab> */}
                     </Tab.List>
-                    <Tab.Panels>
+                    <Tab.Panels className="overflow-x-scroll">
                       <Tab.Panel className="">
-                        {/* <TimeDomainChart /> */}
-                        {/* <TimeEChart /> */}
                         <TimeChartDropDown />
                       </Tab.Panel>
                       <Tab.Panel className="">
@@ -289,15 +296,6 @@ function Introspect() {
                       <Tab.Panel className="">
                         <Spectrogram />
                       </Tab.Panel>
-                      {/* <Tab.Panel className="">
-                        <TimeEChart />
-                        <div className="my-3"></div>
-                        <EChart />
-                        <div className="my-3"></div>
-                        <Temperature />
-                        <div className="my-3"></div>
-                        <Spectrogram />
-                      </Tab.Panel> */}
                     </Tab.Panels>
                   </Tab.Group>
                 </div>

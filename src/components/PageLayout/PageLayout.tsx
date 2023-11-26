@@ -16,7 +16,9 @@ function PageLayout(props: PageLayoutPropsType) {
           <title>{props.pageTitle} | Kaswin</title>
         </Helmet>
       </HelmetProvider>
-      <div className="px-8 py-4 flex flex-row min-h-[90vh] flex-1">{props.children}</div>
+      <div className=" px-2 md:px-8 py-4 flex flex-row min-h-[90vh] flex-1">
+        {props.children}
+      </div>
     </div>
   );
 }

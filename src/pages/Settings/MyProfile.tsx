@@ -17,7 +17,7 @@ function MyProfile() {
     setOpen(false);
   };
   return (
-    <div className="flex flex-col px-10">
+    <div className="flex flex-col lg:px-10">
       <div className="flex flex-row justify-between items-center">
         <div
           className="text-[#000000] text-left relative flex-1"
@@ -109,7 +109,7 @@ function MyProfile() {
               )}
             </div>
           </div>
-          <div className="pr-4 pl-4 flex flex-row sm:flex-col md:flex-col lg-flex-row xl:flex-row gap-[124px] sm:gap-8 md:gap-8 lg:gap-[124px] xl:gap-[124px] items-start justify-start shrink-0 relative">
+          <div className="pr-4 pl-4 flex flex-wrap md:flex-nowrap flex-row sm:flex-col md:flex-col lg-flex-row xl:flex-row sm:gap-8 md:gap-8 lg:gap-8 xl:gap-[124px] items-start justify-start shrink-0 relative">
             <div className="flex flex-col gap-8 items-start justify-start shrink-0 relative">
               <div className="flex flex-col gap-1 items-start justify-start shrink-0  relative">
                 <div
@@ -131,7 +131,7 @@ function MyProfile() {
                   value={'Peter'}
                 />
               </div>
-              <div className="flex flex-col gap-1 items-start justify-start shrink-0  relative">
+              <div className="flex flex-col gap-1 items-start justify-start shrink-0 relative">
                 <div
                   className="text-[#858e93] text-left relative"
                   style={{
@@ -212,7 +212,7 @@ function MyProfile() {
             </div>
           </div>
         </div>
-        <div className="rounded-xl flex flex-row items-center justify-between self-stretch shrink-0 relative mt-5">
+        <div className="rounded-xl flex flex-wrap md:flex-nowrap flex-row items-center justify-between self-stretch shrink-0 relative mt-5">
           <div className="flex flex-col gap-1 items-start justify-start shrink-0 w-[130px] relative">
             <div
               className="text-[#000000] text-left relative"
@@ -232,7 +232,7 @@ function MyProfile() {
             ***********{' '}
           </div>
           <div
-            className="rounded-[10px] cursor-pointer border-solid border-[#aecaf4] border pt-3 pr-4 pb-3 pl-4 flex flex-row gap-2.5 items-center justify-center shrink-0 h-11 relative"
+            className="rounded-[10px] mt-4 md:mt-auto cursor-pointer border-solid border-[#aecaf4] border pt-3 pr-4 pb-3 pl-4 flex flex-row gap-2.5 items-center justify-center shrink-0 h-11 relative"
             onClick={handleClickOpen}
           >
             <div className="flex flex-col gap-[3.58px] items-center justify-center shrink-0 w-[22px] h-[22px] relative">

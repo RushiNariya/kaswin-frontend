@@ -13,11 +13,11 @@ function IntrospectCard({
   selectIntrospectHandler: (data: IntrospectListType) => void;
 }) {
   return (
-    <div className="text-center w-full min-w-[100px] max-w-[50%] lg:max-w-[100%]">
+    <div className="text-center w-full md:min-w-[100px] md:max-w-[100%] lg:max-w-[100%]">
       <div className="w-full">
         <div
           onClick={() => selectIntrospectHandler(data)}
-          className={`object-cover  cursor-pointer hover:scale-105 transform
+          className={`object-cover  cursor-pointer md:hover:scale-105 transform
         transition duration-500 overflow-hidden w-full relative object-center flex flex-col gap-y-6 justify-between h-40 hd:min-h-[215px] p-4 py-6 mx-auto rounded-3xl border-2 ${
           selectedIntrospect?.id === data.id
             ? 'border-2 border-[#426AB9] introspect-card-selected'

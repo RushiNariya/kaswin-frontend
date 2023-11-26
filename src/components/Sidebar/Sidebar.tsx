@@ -110,6 +110,21 @@ const Sidebar = (props: { routes: (routeType | routeTypeChildren)[] }) => {
             <SidebarItems key={index} item={item} />
           ))}
 
+          <div className="px-3">
+            <button
+              type="submit"
+              className="tracking-wide flex lg:min-w-[10rem] font-semibold bg-primary text-white w-full px-2 py-2 md:py-3 rounded-lg transition-all duration-300 ease-in-out items-center justify-center focus:shadow-outline focus:outline-none"
+            >
+              <Icon
+                icon="ant-design:thunderbolt-filled"
+                className="mr-2 mt-1"
+                width={20}
+                height={20}
+              />
+              <span className="">Upgrade to premium</span>
+            </button>
+          </div>
+
           <div className="fixed bottom-10 px-[18px] text-gray-400 cursor-pointer">
             <div
               className="flex justify-center items-center cursor-pointer"

@@ -1,10 +1,11 @@
 import { Icon } from '@iconify/react';
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import Datepicker from 'react-tailwindcss-datepicker';
 
 import SensorCard from '../../components/Cards/SensorCard';
 import TimeSeriesChart from '../../components/Charts/TimeSeriesChart';
+import SensorDropDown from '../../components/DropDown/SensorDropDown';
 import PageLayout from '../../components/PageLayout/PageLayout';
 // import sensorsList from '../../data/sensorsData';
 import { useSelector } from '../../redux/rootStateType';
@@ -34,11 +35,15 @@ function Sensors() {
     dispatch(fetchSensorByIdSuccess(sensor));
   };
 
+  useEffect(() => {
+    dispatch(fetchSensorByIdSuccess(sensorsList[0]));
+  }, []);
+
   return (
     <PageLayout pageTitle="Sensors">
       <section className="py-6 space-y-3 w-full">
         <div className="flex-1 w-full">
-          <div className="grid gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
+          <div className="hidden md:grid gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3">
             {sensorsList.map((item) => {
               return (
                 <SensorCard
@@ -56,41 +61,64 @@ function Sensors() {
             {/* <SensorCard /> */}
             {/* <SensorCard /> */}
           </div>
+
+          <div className="w-full md:hidden">
+            <SensorDropDown
+              list={sensorsList}
+              selected={selectedSensor || { id: 1, name: 'select Sensor' }}
+              setSelected={selectSensorHandler}
+            />
+
+            <div className="mt-4">
+              {selectedSensor ? (
+                <SensorCard
+                  key={selectedSensor.id}
+                  data={selectedSensor}
+                  selectSensorHandler={() => {}}
+                  selectedSensor={selectedSensor}
+                />
+              ) : null}
+            </div>
+          </div>
           {selectedSensor ? (
             <div className="w-full mt-8">
-              <div className="grid gap-8 sm:grid-cols-1 h-full md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3">
-                <div className="col-span-2 border-2 p-4 rounded-3xl h-full">
+              <div className="grid gap-0 md:gap-8 grid-cols-1 h-full md:grid-cols-1 lg:grid-cols-3 xl:grid-cols-3">
+                <div className="col-span-2 z-0 border-2 p-4 rounded-3xl h-full">
                   <div>
-                    <div className="flex items-center">
-                      <span className="font-bold text-[1rem] ml-5 mr-1">
-                        Sensor Overview {'>'}
-                      </span>
-                      <span className="font-bold text-[1rem] ml-1">
-                        {' '}
-                        Sensor 2 : SNS1180
-                      </span>
-                      <div className="p-1 px-2 border text-[12px] rounded-[4px] ml-3 border-[#F8969C] text-[#F8969C]">
-                        V sensor
+                    <div className="flex items-center flex-wrap gap-2 md:gap-0">
+                      <div>
+                        <span className="font-bold text-[0.9rem] md:text-[1rem] ml-5 mr-1">
+                          Sensor Overview {'>'}
+                        </span>
+                        <span className="font-bold whitespace-nowrap text-[0.9rem] md:text-[1rem] ml-1">
+                          {' '}
+                          Sensor 2 : SNS1180
+                        </span>
                       </div>
-                      <div className="group relative">
-                        <Icon
-                          icon="simple-line-icons:exclamation"
-                          width={18}
-                          className="text-gray-400 ml-3"
-                          height={18}
-                        />
+                      <div className="flex justify-between md:justify-start items-center flex-1 px-2 mt-2 md:p-auto md:m-auto">
+                        <div className="p-1 px-2 border whitespace-nowrap text-[12px] rounded-[4px] ml-3 border-[#F8969C] text-[#F8969C]">
+                          V sensor
+                        </div>
+                        <div className="group relative">
+                          <Icon
+                            icon="simple-line-icons:exclamation"
+                            width={18}
+                            className="text-gray-400 ml-3"
+                            height={18}
+                          />
 
-                        <div
-                          className={`absolute invisible -top-5 left-10 group-hover:visible min-w-[140px] max-w-[1000px] z-50 whitespace-break-spaces bg-[#292C2E] text-white px-4 mb-3 py-2 text-sm rounded-md`}
-                        >
-                          <div className="p-1">
-                            <div>
-                              <div className="mb-1 font-medium">
-                                <div>
-                                  <span className="text-gray-200 mb-4 text-[0.8rem]">
-                                    Threshold Value
-                                  </span>
-                                  <br /> <span className="text-[1rem]">300 m/s</span>
+                          <div
+                            className={`absolute invisible top-5 right-0 md:-top-5 md:left-10 group-hover:visible md:min-w-[140px] md:max-w-[1000px] z-50 whitespace-break-spaces bg-[#292C2E] text-white px-4 mb-3 py-2 text-sm rounded-md`}
+                          >
+                            <div className="p-1">
+                              <div>
+                                <div className="mb-1 font-medium">
+                                  <div>
+                                    <span className="text-gray-200 mb-4 text-[0.8rem]">
+                                      Threshold Value
+                                    </span>
+                                    <br /> <span className="text-[1rem]">300 m/s</span>
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -103,7 +131,7 @@ function Sensors() {
                     </div>
                   </div>
                 </div>
-                <div>
+                <div className="mt-4 p-2 md:p-0">
                   <div className="font-bold text-[1rem] text-[#292C2E] mb-4">
                     Performance report
                   </div>
@@ -135,7 +163,7 @@ function Sensors() {
                   <div className="flex justify-center">
                     <button
                       type="submit"
-                      className="tracking-wide  w-[65%] lg:min-w-[10rem] font-semibold bg-primary text-white px-2 py-2 md:py-3 rounded-lg transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
+                      className="tracking-wide lg:min-w-[10rem] font-semibold bg-primary text-white px-2 py-2 md:py-3 rounded-lg transition-all duration-300 ease-in-out flex items-center justify-center focus:shadow-outline focus:outline-none"
                     >
                       <Icon
                         icon="ant-design:thunderbolt-filled"

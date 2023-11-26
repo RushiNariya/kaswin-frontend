@@ -9,9 +9,9 @@ function Settings() {
   const [selectedIndex, setSelectedIndex] = React.useState(0);
   return (
     <PageLayout pageTitle="Settings">
-      <div className="flex flex-row flex-1 sm:flex-col lg:flex-row xl:flex-row">
+      <div className="flex flex-row flex-1 flex-col lg:flex-row xl:flex-row">
         <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex} vertical>
-          <Tab.List className="flex flex-col w-[169px] gap-3 sm:flex-row lg:flex-col xl:flex-col">
+          <Tab.List className="flex lg:flex-col w-[169px] gap-3 sm:flex-row lg:flex-col xl:flex-col">
             <Tab as={Fragment}>
               <div
                 className={`${
@@ -39,7 +39,7 @@ function Settings() {
                 <div
                   className={` ${
                     selectedIndex === 1 ? 'text-[#426ab9]' : 'text-[#545a5f]'
-                  } text-left relative`}
+                  } text-left relative whitespace-nowrap`}
                   style={{
                     font: "var(--headline-3-bold, 700 16px/24px 'Mulish', sans-serif)",
                   }}
@@ -49,6 +49,8 @@ function Settings() {
               </div>
             </Tab>
           </Tab.List>
+
+          <hr className="my-4 md:hidden" />
           <Tab.Panels className="mt-2 w-full">
             <Tab.Panel>
               <MyProfile />

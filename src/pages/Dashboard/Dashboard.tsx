@@ -7,12 +7,13 @@ import Datepicker from 'react-tailwindcss-datepicker';
 
 import TimeLineChart from '../../components/Charts/TimeLineChart';
 import DashboardDatepicaker from '../../components/Datepicker/DashboardDatepicaker';
+import DropDown from '../../components/DropDown/DropDown';
 import DashboardDiagnosisChartModal from '../../components/Modal/DashboardDiagnosisChartModal';
 import PageLayout from '../../components/PageLayout/PageLayout';
 import StatusCard from './StatusCard';
 
 function Dashboard() {
-  const [isSelectedTab, setIsSelectedTab] = React.useState<number | null>(null);
+  const [isSelectedTab, setIsSelectedTab] = React.useState<number | null>(0);
   const [pageIndex, setPageIndex] = React.useState<number>(0);
   const [pageCount, setPageCount] = React.useState<number>(31);
   const [selectedDate, setSelectedDate] = React.useState<string | null>(null);
@@ -67,17 +68,24 @@ function Dashboard() {
     return monthsInfo;
   };
 
+  const listOptions = [
+    { id: 0, name: 'Last Month' },
+    { id: 1, name: 'Last 7 Days' },
+    { id: 2, name: 'Previous Session' },
+    { id: 3, name: 'Current Session' },
+  ];
+
   const monthsInfo = getLast4MonthsInfo();
   const [selected, setSelected] = useState(monthsInfo[0]);
 
   return (
     <PageLayout pageTitle="dashboard">
       <div className="flex-1 w-full">
-        <div className="grid gap-14 sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-3  ">
+        <div className="grid xl:gap-14 w-full sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-3">
           <StatusCard />
-          <div className="flex flex-col gap-[38px] items-center justify-center shrink-0 w-[100%] sm:min-w-min relative col-span-2">
-            <div className="flex flex-row items-start justify-between self-stretch shrink-0  relative">
-              <div className="flex flex-col sm:flex-row md:flex-col lg:flex-row xl:flex-row gap-0 items-start justify-start shrink-0 relative">
+          <div className="flex flex-col gap-[38px] sm:mt-4 xl:mt-auth items-center justify-center shrink-0 w-[100%] sm:min-w-min relative md:col-span-2">
+            <div className="flex gap-2 mt-4 md:mt-auto flex-row items-start justify-between self-stretch shrink-0  relative">
+              <div className="hidden lg:flex flex-col sm:flex-row md:flex-col lg:flex-row xl:flex-row gap-0 items-start justify-start shrink-0 relative">
                 <div
                   className={`border-solid border-b pt-[7px] pr-2.5 pb-[7px] pl-2.5 flex flex-row gap-2.5 items-start justify-start shrink-0 relative cursor-pointer ${
                     isSelectedTab === 0
@@ -86,12 +94,7 @@ function Dashboard() {
                   }`}
                   onClick={() => setIsSelectedTab(0)}
                 >
-                  <div
-                    className="text-[#292c2e] text-left relative flex items-center justify-start font-[700] text-[14px] leading-[22px] hd:text-[20px]"
-                    // style={{
-                    //   font: "var(--headline-4-bold, 700 14px/22px 'Mulish', sans-serif)",
-                    // }}
-                  >
+                  <div className="text-[#292c2e] text-left relative flex items-center justify-start font-[700] text-[14px] leading-[22px] hd:text-[20px]">
                     Last Month{' '}
                   </div>
                 </div>
@@ -103,12 +106,7 @@ function Dashboard() {
                   }`}
                   onClick={() => setIsSelectedTab(1)}
                 >
-                  <div
-                    className="text-[#292c2e] text-left relative flex items-center justify-start font-[700] text-[14px] leading-[22px] hd:text-[20px]"
-                    // style={{
-                    //   font: "var(--headline-4-bold, 700 14px/22px 'Mulish', sans-serif)",
-                    // }}
-                  >
+                  <div className="text-[#292c2e] text-left relative flex items-center justify-start font-[700] text-[14px] leading-[22px] hd:text-[20px]">
                     Last 7 Days{' '}
                   </div>
                 </div>
@@ -120,12 +118,7 @@ function Dashboard() {
                   }`}
                   onClick={() => setIsSelectedTab(2)}
                 >
-                  <div
-                    className="text-[#292c2e] text-left relative flex items-center justify-start font-[700] text-[14px] leading-[22px] hd:text-[20px]"
-                    // style={{
-                    //   font: "var(--headline-4-bold, 700 14px/22px 'Mulish', sans-serif)",
-                    // }}
-                  >
+                  <div className="text-[#292c2e] text-left relative flex items-center justify-start font-[700] text-[14px] leading-[22px] hd:text-[20px]">
                     Previous Session{' '}
                   </div>
                 </div>
@@ -138,14 +131,19 @@ function Dashboard() {
                 >
                   <div
                     className="text-[#292c2e] text-left relative flex items-center justify-start font-[700] text-[14px] leading-[22px] hd:text-[20px]"
-                    // style={{
-                    //   font: "var(--headline-4-bold, 700 14px/22px 'Mulish', sans-serif)",
-                    // }}
                     onClick={() => setIsSelectedTab(3)}
                   >
                     Current Session{' '}
                   </div>
                 </div>
+              </div>
+
+              <div className="flex lg:hidden">
+                <DropDown
+                  list={listOptions}
+                  setSelected={setIsSelectedTab}
+                  selected={listOptions.find((item: any) => item.id === isSelectedTab)}
+                />
               </div>
 
               <div>
@@ -159,7 +157,7 @@ function Dashboard() {
                 />
               </div>
             </div>
-            <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-10 items-center justify-start shrink-0 self-stretch relative">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-10 items-center justify-start shrink-0 self-stretch relative">
               <div className="rounded-[10px] border-solid border-[#d0e1fb] border-[0.5px] p-4 flex flex-col gap-4 items-center justify-center shrink-0  relative overflow-hidden hd:h-[280px]">
                 <div className="flex flex-col gap-4 items-center justify-center shrink-0 relative">
                   <svg
@@ -361,30 +359,32 @@ function Dashboard() {
             </div>
           </div>
         </div>
-        <div className="flex flex-row items-start justify-between  h-9 relative mt-8">
-          <DashboardDatepicaker
-            pageCount={pageCount}
-            pageIndex={pageIndex}
-            gotoPage={
-              (page: number) => {
-                setPageIndex(page);
-                setSelectedDate(`${page}/${selected.month}/${selected.year}`);
+        <div className="flex flex-row items-start justify-between h-9 gap-4 relative mt-8 w-full">
+          <div className="overflow-x-scroll flex flex-row items-start justify-between flex-1">
+            <DashboardDatepicaker
+              pageCount={pageCount}
+              pageIndex={pageIndex}
+              gotoPage={
+                (page: number) => {
+                  setPageIndex(page);
+                  setSelectedDate(`${page}/${selected.month}/${selected.year}`);
+                }
+                // eslint-disable-line no-console
               }
-              // eslint-disable-line no-console
-            }
-            previousPage={() => {
-              if (pageIndex > 0) {
-                setPageIndex(pageIndex - 1);
-                setSelectedDate(`${pageIndex - 1}/${selected.month}/${selected.year}`);
-              }
-            }}
-            nextPage={() => {
-              if (pageIndex < pageCount) {
-                setPageIndex(pageIndex + 1);
-                setSelectedDate(`${pageIndex + 1}/${selected.month}/${selected.year}`);
-              }
-            }}
-          />
+              previousPage={() => {
+                if (pageIndex > 0) {
+                  setPageIndex(pageIndex - 1);
+                  setSelectedDate(`${pageIndex - 1}/${selected.month}/${selected.year}`);
+                }
+              }}
+              nextPage={() => {
+                if (pageIndex < pageCount) {
+                  setPageIndex(pageIndex + 1);
+                  setSelectedDate(`${pageIndex + 1}/${selected.month}/${selected.year}`);
+                }
+              }}
+            />
+          </div>
 
           <div
             className="flex flex-col gap-1 items-start justify-start shrink-0 relative"
@@ -452,26 +452,52 @@ function Dashboard() {
             </Listbox>
           </div>
         </div>
-        <div className="grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-3 gap-8 items-start justify-center relative mt-8">
-          <div className="pr-4 pl-4 flex flex-col gap-[15px] items-start justify-start shrink-0 relative col-span-2">
-            <div className="flex flex-row items-center justify-between self-stretch shrink-0 relative">
+        <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 xl:grid-cols-3 lg:gap-8 items-start justify-center relative mt-8">
+          <div className="md:pr-4 md:pl-4 flex flex-col gap-[15px] items-start justify-start shrink-0 relative col-span-2">
+            <div className="flex flex-wrap flex-row items-center justify-between self-stretch shrink-0 relative">
               <div
-                className="text-[#292c2e] text-left relative"
+                className="text-[#292c2e] text-left relative flex items-center"
                 style={{
                   font: "var(--headline-3-bold, 700 16px/24px 'Mulish', sans-serif)",
                 }}
               >
                 Error window{' '}
+                {errorWindow ? (
+                  <svg
+                    className="pt-[5px] md:hidden pr-2 pb-[5px] pl-2 flex flex-col gap-0 items-start justify-center shrink-0 relative overflow-visible cursor-pointer"
+                    width="40"
+                    height="40"
+                    viewBox="0 0 20 26"
+                    fill="none"
+                    xmlns="http://www.w3.org/2000/svg"
+                    onClick={() => setErrorWindow(false)}
+                  >
+                    <path
+                      d="M5 18L10 13L5 8"
+                      stroke="#AECAF4"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                    <path
+                      d="M15 18L10 13L15 8"
+                      stroke="#AECAF4"
+                      strokeWidth="1.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    />
+                  </svg>
+                ) : null}
               </div>
-              <div className="bg-[#ffffff] rounded-[5px] pt-1.5 pr-3 pb-1.5 pl-3 flex flex-row gap-2 items-center justify-start shrink-0 relative overflow-hidden">
-                <div className="flex flex-row gap-8 items-center justify-start shrink-0  relative overflow-hidden">
+              <div className="bg-[#ffffff] rounded-[5px] md:pt-1.5 md:pr-3 md:pb-1.5 md:pl-3 flex flex-row flex-wrap gap-2 items-center justify-start shrink-0 relative overflow-hidden">
+                <div className="flex flex-row flex-wrap gap-8 items-center justify-end md:justify-start shrink-0  relative overflow-hidden">
                   <div
                     className="text-[#292c2e] text-left relative"
                     style={{
                       font: "var(--headline-4-bold, 700 14px/22px 'Mulish', sans-serif)",
                     }}
                   >
-                    Total Failures : 20{' '}
+                    Total Failures : 20
                   </div>
                 </div>
                 {errorWindow ? (
@@ -497,7 +523,7 @@ function Dashboard() {
                       </div>
                     </div>
                     <svg
-                      className="pt-[5px] pr-2 pb-[5px] pl-2 flex flex-col gap-0 items-start justify-center shrink-0 relative overflow-visible cursor-pointer"
+                      className="pt-[5px] hidden pr-2 pb-[5px] pl-2 md:flex flex-col gap-0 items-start justify-center shrink-0 relative overflow-visible cursor-pointer"
                       // style={{ transform: 'translate(0px, -26px)' }}
                       width="40"
                       height="40"

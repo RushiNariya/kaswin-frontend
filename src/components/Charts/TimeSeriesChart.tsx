@@ -107,7 +107,7 @@ class TimeSeriesChart extends React.Component {
 
   render() {
     return (
-      <div id="chart">
+      <div id="chart" className="z-10">
         <ReactApexChart
           options={(this.state as any).options}
           series={(this.state as any).series}

@@ -65,8 +65,8 @@ function SpindleListing() {
   };
 
   return (
-    <div className="w-full px-10 ">
-      <div className="flex flex-row items-center justify-between px-8">
+    <div className="w-full lg:px-10 ">
+      <div className="flex flex-row items-center justify-between lg:px-8">
         <div
           className="text-[#000000] text-left relative"
           style={{
@@ -109,12 +109,12 @@ function SpindleListing() {
           </button>
         </div>
       </div>
-      <div className="w-full px-4 pt-5">
+      <div className="w-full lg:px-2 pt-5">
         <DragDropContext onDragEnd={(result) => onDragEnd(result)}>
           <Droppable droppableId="droppable">
             {(provided) => (
               <div
-                className="mx-auto w-full  rounded-2xl bg-white"
+                className="mx-auto w-full rounded-2xl bg-white"
                 ref={provided.innerRef}
                 {...provided.droppableProps}
               >
@@ -129,7 +129,7 @@ function SpindleListing() {
                         ref={provided.innerRef}
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
-                        className="p-3"
+                        className="lg:p-3"
                       >
                         <Disclosure
                           as="div"
@@ -275,7 +275,7 @@ function SpindleListing() {
                               </div>
                               <Disclosure.Panel className=" text-sm text-gray-500 flex w-full flex-row gap-8 items-start justify-center self-stretch  relative">
                                 {/* <div className="flex w-full flex-row gap-8 items-start justify-center self-stretch shrink-0 relative"> */}
-                                <div className=" relative pt-6 pb-6 pl-8 invisible">
+                                <div className=" relative hidden md:block pt-6 pb-6 pl-8 invisible">
                                   <div className="flex flex-col gap-[6.67px] items-center justify-center shrink-0 w-6 h-6">
                                     <svg
                                       className="flex flex-col gap-1 items-start justify-start shrink-0 relative overflow-visible"
@@ -313,9 +313,9 @@ function SpindleListing() {
                                     </svg>
                                   </div>
                                 </div>
-                                <div className="pt-6 pr-8 pb-6 flex flex-col gap-10 items-start justify-start self-stretch  relative">
+                                <div className="pt-6 pr-8 pb-6 p-4 md:p-auto flex flex-col gap-10 items-start justify-start self-stretch  relative">
                                   <div className="flex flex-col gap-8 items-start justify-start  relative">
-                                    <div className="flex flex-row gap-[124px] items-start justify-start shrink-0 relative">
+                                    <div className="flex flex-row gap-[2rem] md:gap-[124px] flex-wrap items-start justify-start shrink-0 relative">
                                       <div className="flex flex-col gap-1 items-start justify-start shrink-0 relative">
                                         <div
                                           className="text-[#858e93] text-left relative"
@@ -444,12 +444,12 @@ function SpindleListing() {
           </Droppable>
         </DragDropContext>
         <div
-          className={`mx-auto w-full  rounded-2xl bg-white p-2 ${
+          className={`mx-auto w-full  rounded-2xl bg-white py-2 lg:p-2 ${
             addSpindle ? '' : 'hidden'
           }`}
         >
           <div className="rounded-[12px] border-solid border-[#aecaf4] border pt-6 pr-8 pb-6 pl-8 flex flex-row gap-8 items-center justify-center self-stretch shrink-0 relative">
-            <div className="flex flex-col gap-[6.67px] items-center justify-center shrink-0 w-6 h-6 relative">
+            {/* <div className="flex flex-col gap-[6.67px] items-center justify-center shrink-0 w-6 h-6 relative">
               <svg
                 className="flex flex-col gap-1 items-start justify-start shrink-0 relative overflow-visible"
                 style={{}}
@@ -484,10 +484,10 @@ function SpindleListing() {
                   strokeWidth="1.33333"
                 />
               </svg>
-            </div>
+            </div> */}
             <div className="flex flex-col gap-8 items-start justify-start flex-1 relative">
-              <div className="flex flex-row items-center justify-between self-stretch shrink-0 relative">
-                <div className="flex flex-row gap-4 items-center justify-start shrink-0 relative">
+              <div className="flex flex-row flex-wrap items-center justify-between self-stretch shrink-0 relative">
+                <div className="flex flex-row gap-4 flex-wrap items-center justify-start shrink-0 relative">
                   <div
                     className="text-[#000000] text-left relative"
                     style={{
@@ -543,7 +543,7 @@ function SpindleListing() {
               </div>
               <div className="p-4 flex flex-col gap-10 items-start justify-start self-stretch shrink-0 relative">
                 <div className="flex flex-col gap-8 items-start justify-start shrink-0 relative">
-                  <div className="flex flex-row sm:flex-col md:flex-col lg:flex-row xl:flex-row gap-[124px] sm:gap-8 md:gap-8 lg:gap-[90px] xl:gap-[90px] items-start justify-start shrink-0 relative">
+                  <div className="flex flex-wrap md:flex-nowrap flex-row lg:flex-row xl:flex-row gap-[20px] sm:gap-8 md:gap-8 lg:gap-[90px] xl:gap-[90px] items-start justify-start shrink-0 relative">
                     <div className="flex flex-col gap-1 items-start justify-start shrink-0 w-56 relative">
                       <div
                         className="text-[#858e93] text-left relative"

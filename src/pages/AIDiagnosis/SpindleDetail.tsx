@@ -37,7 +37,7 @@ function SpindleDetail() {
 
   return (
     <div className="flex flex-col gap-8 items-start justify-start relative">
-      <div className="flex flex-row gap-6 items-start justify-start shrink-0 relative">
+      <div className="flex flex-row w-[100%] overflow-x-scroll gap-6 items-start justify-start shrink-0 relative">
         <div
           className={` ${
             selectedSpindle === 0 ? 'bg-[#426ab9]' : 'bg-[#f1f1f1]'
@@ -149,9 +149,9 @@ function SpindleDetail() {
       </div>
 
       <div className="bg-[#f1f1f1] rounded-[24px] w-[100%]  relative left-0 bottom-0 p-6 hd:p-10">
-        <div className="flex flex-row items-start justify-between relative ">
+        <div className="flex flex-row flex-wrap items-start justify-between relative ">
           <div
-            className="text-[#000000] text-left relative flex items-center justify-start font-[800] text-[24px] leading-[32px] hd:text-[35px]"
+            className="text-[#000000] text-left relative flex items-center justify-start font-[800] md:text-[24px] leading-[32px] hd:text-[35px]"
             // style={{
             //   font: "var(--headline-1-extrabold, 800 24px/32px 'Mulish', sans-serif)",
             // }}
@@ -159,7 +159,7 @@ function SpindleDetail() {
             {spindleData?.name}{' '}
           </div>
           <div className="flex flex-row gap-2 items-start justify-start shrink-0 h-[60px] relative">
-            <div className="flex flex-col gap-2 items-end justify-start shrink-0 relative">
+            <div className="flex flex-col gap-2 justify-start shrink-0 relative">
               <div
                 className="text-[#292c2e] text-left relative flex items-center justify-start font-[500] text-[16px] leading-[24px] hd:text-[20px]"
                 // style={{

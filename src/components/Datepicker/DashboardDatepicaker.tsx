@@ -31,7 +31,7 @@ function DashboardDatepicaker({
   // console.log(pageIndex);
 
   return (
-    <div className="pt-2 pb-3 flex flex-row gap-1 items-center justify-start shrink-0 relative">
+    <div className="pt-2 pb-3 flex flex-row gap-1 items-center justify-start relative">
       {/* <svg
         className="rounded-lg pt-px pr-[9px] pb-px pl-[9px] flex flex-col gap-2.5 items-center justify-center shrink-0 relative overflow-visible"
         // style={{ transform: 'translate(-28px, 0px)' }}

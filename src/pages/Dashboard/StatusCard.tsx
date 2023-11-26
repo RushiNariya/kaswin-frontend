@@ -2,7 +2,7 @@ import React from 'react';
 
 function StatusCard() {
   return (
-    <div className="bg-[#e6effc] rounded-[25px] shrink-0  relative w-auto p-5 hd:p-10">
+    <div className="bg-[#e6effc] rounded-[25px] shrink-0 relative w-[100%] p-5 hd:p-10">
       <div className="flex flex-row justify-between mx-1 mb-10">
         <div>
           <div

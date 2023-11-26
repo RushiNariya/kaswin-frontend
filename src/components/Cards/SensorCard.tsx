@@ -33,7 +33,7 @@ function SensorCard({
     <div className="text-center">
       <div
         onClick={() => selectSensorHandler(data)}
-        className={`object-cover hover:bg-gray-100 hover:scale-105 transform
+        className={`object-cover hover:bg-gray-100 md:hover:scale-105 transform
         transition duration-500 cursor-pointer object-center w-full flex flex-col gap-y-6 justify-between h-40 p-4 mx-auto rounded-3xl border-2 ${
           selectedSensor?.id === data.id ? 'border-2 border-[#8FB0EF]' : ''
         }`}
@@ -74,7 +74,9 @@ function SensorCard({
             <div className="">
               {selectedSensor?.id === data.id ? (
                 <div className="flex items-center">
-                  <span className="text-sm mr-1 text-[#8FB0EF]">selected</span>
+                  <span className="text-sm mr-1 hidden lg:inline text-[#8FB0EF]">
+                    selected
+                  </span>
                   <div className="frame-195">
                     <svg
                       className="frame-193"
