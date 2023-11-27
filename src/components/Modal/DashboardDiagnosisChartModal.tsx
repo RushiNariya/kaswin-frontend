@@ -36,7 +36,7 @@ function DashboardDiagnosisChartModal({
 
       <div className="fixed inset-0 overflow-y-auto">
         <div className="flex min-h-full items-center justify-center p-4 text-center">
-          <Dialog.Panel className="w-[60%]  transform overflow-hidden rounded-2xl bg-white p-10 text-left align-middle shadow-xl transition-all">
+          <Dialog.Panel className=" w-full md:w-[60%] transform overflow-hidden rounded-2xl bg-white p-6 md:p-10 text-left align-middle shadow-xl transition-all">
             <Dialog.Title as="div" className="">
               <div className="flex justify-between items-center">
                 <span className="text-lg font-bold leading-6 text-gray-900">

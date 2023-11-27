@@ -160,7 +160,7 @@ export default function Example() {
                           >
                             <Tab.List
                               onClick={(e) => e.stopPropagation()}
-                              className="flex items-center justify-between cursor-pointer"
+                              className="flex items-center py-4 justify-between cursor-pointer"
                             >
                               <div>
                                 <Tab as={Fragment}>
@@ -195,21 +195,27 @@ export default function Example() {
                             </Tab.List>
                             <Tab.Panels>
                               <Tab.Panel className="w-full sm:w-[600px] max-h-[500px] overflow-y-scroll">
-                                <div className="mt-6">
+                                <div className="">
                                   <div className="flex gap-x-4 flex-col">
                                     {notifications.map((item) => {
                                       return (
                                         <React.Fragment key={item.id}>
-                                          <div className="flex gap-4 my-4 items-center justify-between">
-                                            <div className="flex items-center">
-                                              <Icon
-                                                icon="carbon:close-filled"
-                                                className="min-w-[20px] h-5"
-                                              />
-                                              <span className="mx-2">
-                                                {item.dateTime}
-                                              </span>{' '}
-                                              <span className="mr-2">{item.content}</span>
+                                          <div className="flex gap-4 my-2 items-center justify-between">
+                                            <div className="flex flex-row justify-start">
+                                              <div className="flex flex-1 items-center">
+                                                <Icon
+                                                  icon="carbon:close-filled"
+                                                  className="min-w-[20px] h-5"
+                                                />
+                                                <span className="mx-2">
+                                                  {item.dateTime}
+                                                </span>{' '}
+                                              </div>
+                                              <div className="ml-4 text-left">
+                                                <span className="mr-2">
+                                                  {item.content}
+                                                </span>
+                                              </div>
                                             </div>
                                             {item.action ? (
                                               <div>
@@ -230,7 +236,18 @@ export default function Example() {
                                                   <Icon icon="material-symbols:arrow-outward" />
                                                 </button>
                                               </div>
-                                            ) : null}
+                                            ) : (
+                                              <div
+                                                style={{
+                                                  visibility: 'hidden',
+                                                }}
+                                              >
+                                                <button className="bg-[#EFA71C] whitespace-nowrap flex items-center gap-x-1 text-white p-2 rounded-md">
+                                                  spindle 1
+                                                  <Icon icon="material-symbols:arrow-outward" />
+                                                </button>
+                                              </div>
+                                            )}
                                           </div>
                                         </React.Fragment>
                                       );
@@ -239,21 +256,29 @@ export default function Example() {
                                 </div>
                               </Tab.Panel>
                               <Tab.Panel className="w-full sm:w-[600px] max-h-[500px] overflow-y-scroll">
-                                <div className="mt-6">
+                                <div className="">
                                   <div className="flex gap-x-4 flex-col">
                                     {notifications.map((item) => {
                                       return (
                                         <React.Fragment key={item.id}>
-                                          <div className="flex gap-4 my-4 items-center justify-between">
-                                            <div className="flex items-center">
-                                              <Icon
-                                                icon="carbon:close-filled"
-                                                className="min-w-[20px] h-5"
-                                              />
-                                              <span className="mx-2">
-                                                {item.dateTime}
-                                              </span>{' '}
-                                              <span className="mr-2">{item.content}</span>
+                                          <div className="flex gap-4 my-2 items-center justify-between">
+                                            <div className="flex items-start">
+                                              <div className="flex flex-1 items-center">
+                                                <div className="flex flex-1 items-center">
+                                                  <Icon
+                                                    icon="carbon:close-filled"
+                                                    className="min-w-[20px] h-5"
+                                                  />
+                                                  <span className="mx-2">
+                                                    {item.dateTime}
+                                                  </span>{' '}
+                                                </div>
+                                                <div className="ml-4 text-left">
+                                                  <span className="mr-2">
+                                                    {item.content}
+                                                  </span>
+                                                </div>
+                                              </div>
                                             </div>
                                             {item.action ? (
                                               <div>
@@ -274,7 +299,18 @@ export default function Example() {
                                                   <Icon icon="material-symbols:arrow-outward" />
                                                 </button>
                                               </div>
-                                            ) : null}
+                                            ) : (
+                                              <div
+                                                style={{
+                                                  visibility: 'hidden',
+                                                }}
+                                              >
+                                                <button className="bg-[#EFA71C] whitespace-nowrap flex items-center gap-x-1 text-white p-2 rounded-md">
+                                                  spindle 1
+                                                  <Icon icon="material-symbols:arrow-outward" />
+                                                </button>
+                                              </div>
+                                            )}
                                           </div>
                                         </React.Fragment>
                                       );

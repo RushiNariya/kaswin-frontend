@@ -517,3 +517,8 @@ input[type='number'] {
   position: relative;
   overflow: visible;
 }
+
+canvas {
+  width: auto !important;
+  padding: 0 0.5rem !important;
+}

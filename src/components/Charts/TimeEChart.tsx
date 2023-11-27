@@ -151,6 +151,8 @@ function TimeEChart() {
       },
       yAxis: {
         type: 'value',
+        nameGap: 30,
+        nameRotate: 20,
       },
       toolbox: {
         feature: {
@@ -187,7 +189,7 @@ function TimeEChart() {
   });
 
   return (
-    <div className="w-[100%] h-full overflow-scroll">
+    <div className="h-full overflow-scroll">
       {/* <div className="">
         <h2 className="text-center my-4 font-bold text-[#292C2E] text-[1.4rem]">
           Time Domain [g]

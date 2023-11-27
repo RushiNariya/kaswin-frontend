@@ -149,6 +149,7 @@ function Dashboard() {
               <div>
                 <Datepicker
                   useRange={false}
+                  // readOnly
                   value={value}
                   onChange={handleValueChange}
                   inputClassName="relative mt-1 w-full h-10 disabled:bg-slate-100 disabled:bg-opacity-40 focus:border-slate-400 cursor-pointer rounded-md py-2 px-3 text-left border-[1px] border-solid focus:outline-none focus-visible:ring-white focus-visible:ring-opacity-75 sm:text-sm"

@@ -138,7 +138,7 @@ function SpindleListing() {
                           {({ open }) => (
                             <>
                               <div className="flex w-full flex-row gap-8 items-start justify-center self-stretch shrink-0 relative">
-                                <div className=" relative pt-6 pb-6 pl-8">
+                                <div className=" relative pt-6 pb-6 pl-4 md:pl-8">
                                   <div className="flex flex-col gap-[6.67px] items-center justify-center shrink-0 w-6 h-6">
                                     <svg
                                       className="flex flex-col gap-1 items-start justify-start shrink-0 relative overflow-visible"
@@ -176,7 +176,7 @@ function SpindleListing() {
                                     </svg>
                                   </div>
                                 </div>
-                                <Disclosure.Button className="w-full pt-6 pr-8 pb-6">
+                                <Disclosure.Button className="w-full pt-6 pr-4 md:pr-8 pb-6">
                                   <div className="flex flex-col gap-8 items-start justify-start flex-1 relative">
                                     <div className="flex flex-row items-center justify-between self-stretch shrink-0 relative">
                                       <div className="flex flex-row gap-4 items-center justify-start shrink-0 relative">
@@ -448,7 +448,7 @@ function SpindleListing() {
             addSpindle ? '' : 'hidden'
           }`}
         >
-          <div className="rounded-[12px] border-solid border-[#aecaf4] border pt-6 pr-8 pb-6 pl-8 flex flex-row gap-8 items-center justify-center self-stretch shrink-0 relative">
+          <div className="rounded-[12px] border-solid border-[#aecaf4] border pt-6 pr-4 pl-4 md:pr-8 pb-6 md:pl-8 flex flex-row gap-8 items-center justify-center self-stretch shrink-0 relative">
             {/* <div className="flex flex-col gap-[6.67px] items-center justify-center shrink-0 w-6 h-6 relative">
               <svg
                 className="flex flex-col gap-1 items-start justify-start shrink-0 relative overflow-visible"

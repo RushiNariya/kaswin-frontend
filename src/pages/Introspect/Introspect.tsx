@@ -236,7 +236,7 @@ function Introspect() {
                   <Tab.Group selectedIndex={selectedIndex} onChange={setSelectedIndex}>
                     <Tab.List
                       onClick={(e) => e.stopPropagation()}
-                      className="flex md:justify-center flex-wrap md:flex-nowrap justify-around cursor-pointer w-full flex-1 mb-4"
+                      className="flex gap-2 md:justify-center flex-wrap md:flex-nowrap justify-around cursor-pointer w-full flex-1 mb-4"
                     >
                       <Tab as={React.Fragment}>
                         <span
@@ -264,8 +264,8 @@ function Introspect() {
                         <span
                           className={
                             selectedIndex === 2
-                              ? 'px-4 py-2 ml-3 border-b-2 border-black outline-none font-bold'
-                              : 'px-4 py-2 ml-3 border-none text-gray-400 font-bold'
+                              ? 'px-4 py-2 md:ml-3 border-b-2 border-black outline-none font-bold'
+                              : 'px-4 py-2 md:ml-3 border-none text-gray-400 font-bold'
                           }
                         >
                           Temperature
